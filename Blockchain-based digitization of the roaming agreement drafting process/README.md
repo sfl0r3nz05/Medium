@@ -6,7 +6,7 @@ Although future posts will go into technical details of each of the modules that
 ### Overview of Roaming and Roaming Agreement
 **International mobile roaming** is a service that allows mobile users to continue to use their mobile phone or other mobile device to make and receive voice calls and text messages, browse the internet, and send and receive emails, while visiting another country. **Roaming** extends the coverage of the home operator’s retail voice and SMS services, allowing the mobile user to continue using their home operator phone number and data services within another country. The seamless extension of coverage is enabled by a wholesale **Roaming Agreement** between a mobile user’s home operator and the visited mobile operator network.
 
-<img src="https://github.com/sfl0r3nz05/Medium/blob/main/Roaming%20Agreement%20drafting%20process/images/roaming_agreement.png">
+<img src="https://github.com/sfl0r3nz05/Medium/blob/main/Blockchain-based%20digitization%20of%20the%20roaming%20agreement%20drafting%20process/images/roaming_agreement.png">
  
 The **Roaming Agreement** addresses the technical and commercial components required to enable the service. During the drafting stage of the **Roaming Agreement** the parties, i.e., Mobile Network Operators (MNOs), go through a negotiation process and exactly in this process the need for digitalization has been found using the transparency promoted by blockchain technology as the basis of the interactions between the MNOs.
 
@@ -42,7 +42,7 @@ Therefore, a key part of the negotiation process involves the drafting of a **Ro
 ### Overview of the Roaming Agreement negotiation process
 The lifecycle of the **Roaming Agreement** negotiation process is presented as the compilation of a set of best practices integrated in 7 phases. These phases do not represent standards or rules that must be followed in a mandatory way.
 
-<img src="https://github.com/sfl0r3nz05/Medium/blob/main/Roaming%20Agreement%20drafting%20process/images/negotiation_process.png">
+<img src="https://github.com/sfl0r3nz05/Medium/blob/main/Blockchain-based%20digitization%20of%20the%20roaming%20agreement%20drafting%20process/images/negotiation_process.png">
 
 - **Phase** 1 allows receiving the information package from the future roaming partners, which contains as one of the main points to be analyzed by the operators is the deviations document, which contains all the requested changes with respect to the standard templates (e.g., AA.12 and AA.13) thus becoming an essential part of the negotiation. This information is exchanged between operators usually via information systems such as e-mail.
 
