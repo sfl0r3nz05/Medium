@@ -8,7 +8,7 @@ Although future posts will go into technical details of each of the modules that
 
 <img src="https://github.com/sfl0r3nz05/Medium/blob/main/Roaming%20Agreement%20drafting%20process/images/roaming_agreement.png">
  
-The **Roaming Agreement** addresses the technical and commercial components required to enable the service. During the drafting stage of the **Roaming Agreement** the parties, i.e., the MNOs, go through a negotiation process and exactly in this process the need for digitalization has been found using the transparency promoted by blockchain technology as the basis of the interactions between the MNOs.
+The **Roaming Agreement** addresses the technical and commercial components required to enable the service. During the drafting stage of the **Roaming Agreement** the parties, i.e., Mobile Network Operators (MNOs), go through a negotiation process and exactly in this process the need for digitalization has been found using the transparency promoted by blockchain technology as the basis of the interactions between the MNOs.
 
 ### Roaming Agreement drafting based on GSMA templates
 In order to standardize the legal commercial aspects of roaming negotiated between roaming partners for the billing of the services obtained, the GSM Association broadly outlines the content of such **Roaming Agreement** in standardized form for its members.
@@ -36,7 +36,7 @@ The next Table summarizes the standard templates for International **Roaming Agr
 Therefore, a key part of the negotiation process involves the drafting of a **Roaming Agreement** based on the establishment of standard clauses, variations and customized texts with respect to the aforementioned set of templates defined by GSMA. Thus, in the process of drafting the **Roaming Agreement** operators may:
 
 1. Leave an article/sub-article as found in the template thereby establishing a **standard clause**.
-2. Introduce certain **variations** in the articles/sub-articles, by changing names, dates, prices, etc.
+2. Introduce certain **variations** in the articles/sub-articles, by changing variables, e.g., MNO, dates, penalties, currencies and so on with respect to the original text, i.e., the GSMA templates.
 3. Introduce completely new articles/sub-articles that respond to particular interests by constituting **customized texts**.
 
 ### Overview of the Roaming Agreement negotiation process
