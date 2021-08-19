@@ -9,13 +9,11 @@ International mobile roaming is a service that allows mobile users to continue t
 <img src="https://github.com/sfl0r3nz05/Medium/blob/main/Roaming%20Agreement%20drafting%20process/images/roaming_agreement.png">
  
 The **Roaming Agreement** addresses the technical and commercial components required to enable the service. During the drafting stage of the roaming agreement the parties, i.e., the MNOs, go through a negotiation process and exactly in this process the need for digitalization has been found using the transparency promoted by blockchain technology as the basis of the interactions between the MNOs.
+
 ### Roaming Agreement drafting based on GSMA templates
 In order to standardize the legal commercial aspects of roaming negotiated between roaming partners for the billing of the services obtained, the GSM Association broadly outlines the content of such roaming agreements in standardized form for its members.
-The next Table summarizes the standard templates for International Roaming Agreement, as well as the standard templates commonly used. The order commonly followed when creating the roaming agreement is the one established in the Table, where it is common to start with a base framework (AA.12), from which it is added the set of common annexes (AA.13). From this point, individual annexes and addendums are included depending on the operating characteristics of the agreement. It should be noted that although 99% of mobile network operators (MNOs) manage their roaming agreements based on the above-mentioned template sequence, there is no limit to the number of documents to be included. 
-•	**AA.12** constitutes a standard GSMA or Permanent Reference Document. 
-•	**AA.13** contains the common annexes with operational information (e.g., information on tap file, billing data, settlement procedure, customer care, fraud, etc.). 
-•	**AA.14** involves the individual annexes containing information about the operator (e.g., contact details of the roaming team, fraud team, IREG team, TADIG team, etc.). 
-•	**AA.19** constitutes an addendum to the international roaming agreement in order to determine specific properties such as charging, billing, and accounting for a specific scenario like the SMS interworking.
+
+The next Table summarizes the standard templates for International Roaming Agreement, as well as the standard templates commonly used. The order commonly followed when creating the roaming agreement is the one established in the Table, where it is common to start with a base framework (AA.12), from which it is added the set of common annexes (AA.13). From this point, individual annexes and addendums are included depending on the operating characteristics of the agreement. It should be noted that although 99% of mobile network operators (MNOs) manage their roaming agreements based on the above-mentioned template sequence, there is no limit to the number of documents to be included.
 
 Standard Templates for International Roaming Agreement	Common use
 AA.12: International Roaming Agreement (Base Legal Framework)	X
@@ -27,23 +25,31 @@ AA.40: Addendum to the International Roaming Agreement MMS Internetworking Agree
 AA.43: Addendum to the International Roaming Agreement WLAN Roaming Agreement	
 AA.60: Addendum to the International Roaming Agreement Internetworking Template	
 AA.70: Addendum to the International Roaming Agreement MMS Hubbing Agreement	
-AA.71: Addendum to the International Roaming Agreement SMS Hubbing Agreement	
+AA.71: Addendum to the International Roaming Agreement SMS Hubbing Agreement
+
+- **AA.12** constitutes a standard GSMA or Permanent Reference Document. 
+- **AA.13** contains the common annexes with operational information (e.g., information on tap file, billing data, settlement procedure, customer care, fraud, etc.). 
+- **AA.14** involves the individual annexes containing information about the operator (e.g., contact details of the roaming team, fraud team, IREG team, TADIG team, etc.). 
+- **AA.19** constitutes an addendum to the international roaming agreement in order to determine specific properties such as charging, billing, and accounting for a specific scenario like the SMS interworking.	
 
 Therefore, a key part of the negotiation process involves the drafting of a roaming agreement based on the establishment of standard clauses, variations and customized texts with respect to the aforementioned set of templates defined by GSMA. Thus, in the process of drafting the roaming agreement operators may:
+
 1. Leave an article/sub-article as found in the template thereby establishing a **standard clause**.
 2. Introduce certain **variations** in the articles/sub-articles, by changing names, dates, prices, etc.
 3. Introduce completely new articles/sub-articles that respond to particular interests by constituting **customized texts**.
+
 ### Overview of the Roaming Agreement negotiation process
 The lifecycle of the roaming agreement negotiation process is presented as the compilation of a set of best practices integrated in 7 phases. These phases do not represent standards or rules that must be followed in a mandatory way.
 
 <img src="https://github.com/sfl0r3nz05/Medium/blob/main/Roaming%20Agreement%20drafting%20process/images/negotiation_process.png">
 
 **Phase** 1 allows receiving the information package from the future roaming partners, which contains as one of the main points to be analyzed by the operators is the deviations document, which contains all the requested changes with respect to the standard templates (e.g., AA.12 and AA.13) thus becoming an essential part of the negotiation. This information is exchanged between operators usually via information systems such as e-mail.
-**Phase 2** allows to confirm that the Roaming Agreement is going ahead. This step depends largely on the circumstances of the deviation document.
-**Phase 3** encourages one of the parties to complete the Roaming Agreements contract based on the deviations. In order to create the Roaming Agreements, either party can complete the templates.
-**Phase 4** implies that one party sends a soft copy of the contract via email and the other confirm of received. At this point, it is common that some sections be changed, being usual that AA.12 does not change normally and AA.13 changes occasionally, although in the case of the individual annexes of rights they usually suffer changes.
-**Phase 5** enables one of the parties to print hard copies and sign them. Once it is negotiated which party prints the hard copy (at least two copies), it must sign AA.12 in the correct place, although there are cases of operators agreeing to sign all pages of AA.12. Finally, AA.13 is signed and dated for every page.
-**Phase 6** enables the party who did not sign the contract to countersign it. This new signature must be included on both hard copies.
-**Phase 7** states that the party that has countersigned the document shall return one of the signed and countersigned hard copies to the other party. It is recommended that a soft copy be stored for easy access by the entire team.
+
+- **Phase 2** allows to confirm that the Roaming Agreement is going ahead. This step depends largely on the circumstances of the deviation document.
+- **Phase 3** encourages one of the parties to complete the Roaming Agreements contract based on the deviations. In order to create the Roaming Agreements, either party can complete the templates.
+- **Phase 4** implies that one party sends a soft copy of the contract via email and the other confirm of received. At this point, it is common that some sections be changed, being usual that AA.12 does not change normally and AA.13 changes occasionally, although in the case of the individual annexes of rights they usually suffer changes.
+- **Phase 5** enables one of the parties to print hard copies and sign them. Once it is negotiated which party prints the hard copy (at least two copies), it must sign AA.12 in the correct place, although there are cases of operators agreeing to sign all pages of AA.12. Finally, AA.13 is signed and dated for every page.
+- **Phase 6** enables the party who did not sign the contract to countersign it. This new signature must be included on both hard copies.
+- **Phase 7** states that the party that has countersigned the document shall return one of the signed and countersigned hard copies to the other party. It is recommended that a soft copy be stored for easy access by the entire team.
 
 The **conclusion** reached at this point lies in the fact that the process of drafting the roaming agreement is mostly very 'analog' with successive exchanges of information between the parties using traditional means such as e-mail or postal mail. This opens the door to a process of digitalization of Roaming Agreements where blockchain technology oriented to business environments such as Hyperledger Fabric Blockchain to provide transparency in the interaction between the parties, carrying out a digitalization process on a single platform.
