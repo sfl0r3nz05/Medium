@@ -43,7 +43,7 @@ The lifecycle of the roaming agreement negotiation process is presented as the c
 
 <img src="https://github.com/sfl0r3nz05/Medium/blob/main/Roaming%20Agreement%20drafting%20process/images/negotiation_process.png">
 
-**Phase** 1 allows receiving the information package from the future roaming partners, which contains as one of the main points to be analyzed by the operators is the deviations document, which contains all the requested changes with respect to the standard templates (e.g., AA.12 and AA.13) thus becoming an essential part of the negotiation. This information is exchanged between operators usually via information systems such as e-mail.
+- **Phase** 1 allows receiving the information package from the future roaming partners, which contains as one of the main points to be analyzed by the operators is the deviations document, which contains all the requested changes with respect to the standard templates (e.g., AA.12 and AA.13) thus becoming an essential part of the negotiation. This information is exchanged between operators usually via information systems such as e-mail.
 
 - **Phase 2** allows to confirm that the Roaming Agreement is going ahead. This step depends largely on the circumstances of the deviation document.
 - **Phase 3** encourages one of the parties to complete the Roaming Agreements contract based on the deviations. In order to create the Roaming Agreements, either party can complete the templates.
