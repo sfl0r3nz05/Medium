@@ -1,6 +1,6 @@
 # Blockchain-based digitization of the roaming agreement drafting process.
 
-The following is the first in a series of five posts associated to the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), which has as its main objective to transform **Telecom Roaming Agreement** documents and the drafting and negotiation process into a digitized version based on the transparency promoted by blockchain technology.
+The following is the first in a series of five posts associated to the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), which has as its main objective to transform **Telecom Roaming Agreement** documents and the drafting and negotiation process into a digitalized version based on the transparency promoted by blockchain technology.
 Although future posts will go into technical details of each of the modules that have been generated, this first post wants to address the initial vision of the project and why there is a need for it, therefore the following is intended to put the focus on roaming agreements between mobile operators, highlighting the value associated with blockchain technology.
 
 ## Roaming and Roaming Agreement
