@@ -5,4 +5,5 @@ In the [first post of the series]( https://medium.com/@sfl0r3nz05) was mentioned
 1. Leave an article/sub-article as found in the template thereby establishing a **standard clause**.
 2. Introduce certain **variations** in the articles/sub-articles, by changing variables, e.g., MNO, dates, penalties, currencies and so on with respect to the original text, i.e., the GSMA templates.
 3. Introduce completely new articles/sub-articles that respond to particular interests by constituting **customized texts**.
+
 In order to determine as accurately as possible the presence of these three characteristics as part of each of the articles that make up the roaming agreement in this [project]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), a tool for text processing and analysis based on natural language processing (NLP) has been designed, which is hereinafter referred to as NLP engine.
