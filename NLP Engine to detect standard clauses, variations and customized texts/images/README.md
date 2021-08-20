@@ -19,6 +19,9 @@ The logic designed for the **NLP Engine** has two approaches: *detection* and *c
 While a near-total coincidence between texts at the sub-article level represents a **standard clause**, a near-zero coincidence between texts (or simply the non-existence of the sub-article) represents a **customized text**. The intermediate case is represented by the **variation** where there is a high coincidence and the differences are given by the presence of **variables** such as MNO, date, currencies, etc.
 
 ## Variables Detection
+Variable detection goes through the following steps:
+1. A parsing of the **Roaming Agreement** document converted into text is carried out, removing undesired characters. 
+2. The parsed text is divided into groups of 100 words, from which *entities*, *key phrases* and *syntax* are detected from Amazon Comprehend tool [1].
 
 ### Analysis based on Amazon comprehend
 The first NLP approach allows to detect entities, key phrases and syntax using the functionalities proposed by the Amazon Comprehend tool. For the text sent to the Amazon Comprehend tool via REST API, it returns a list of objects as shown in expression *(1)*, when entities are been detected. This information is combined with processing and validations based on expression *(2)* and expression *(3)*, allowing to determine variables. The expression *(2)* constitutes an object of the list of objects returned by Amazon Comprehend tool when key phrases are detected. The expression *(3)* also constitutes an object of the list of objects returned by Amazon Comprehend tool when syntaxis are detected.
@@ -38,3 +41,7 @@ The similarity analysis is based on Jaccard's similarity analysis, which has bee
  ````
     {'id': '1.1', 'similarity': 0.7380952380952381}    				                                                (4)
  ````
+
+ ## References
+
+ [1]	AWS, “Amazon Comprehend Developer Guide,” 2021.
