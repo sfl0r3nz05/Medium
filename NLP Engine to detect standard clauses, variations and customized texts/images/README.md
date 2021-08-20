@@ -21,11 +21,11 @@ While a near-total coincidence between texts at the sub-article level represents
 ## Variables Detection
 Variable detection goes through the following steps:
 1. A parsing of the **Roaming Agreement** document converted into text is carried out, removing undesired characters. 
-2. The parsed text is divided into groups of 100 words, from which *entities*, *key phrases* and *syntax* are detected from `Amazon Comprehend tool` [1].
-3. Post-processing mechanisms are applied based on the combination of the detected elements, i.e., *entities*, *key phrases* and *syntax*.
+2. The parsed text is divided into groups of `100 words`, from which `entities`, `key phrases` and `syntax` are detected from `Amazon Comprehend tool` [1].
+3. Post-processing mechanisms are applied based on the combination of the detected elements, i.e., `entities`, `key phrases` and `syntax`.
 
 ### Analysis based on Amazon Comprehend
-From *Amazon Comprehend Tool* entities, key phrases and syntax are detected. The piece of texts (100 words) sent to the Amazon Comprehend tool via REST API return a list of objects as shown in expression (1), when entities are been detected. This information is combined with processing and validations based on expression (2) and expression (3), allowing to determine variables. The expression (2) constitutes an object of the list of objects returned by Amazon Comprehend tool when key phrases are detected. The expression (3) also constitutes an object of the list of objects returned by Amazon Comprehend tool when syntaxis are detected.
+From *Amazon Comprehend Tool* entities, key phrases and syntax are detected. The piece of texts (`100 words`) sent to the Amazon Comprehend tool via `REST API` return a list of objects as shown in expression (1), when entities are been detected. This information is combined with processing and validations based on expression (2) and expression (3), allowing to determine variables. The expression (2) constitutes an object of the list of objects returned by Amazon Comprehend tool when key phrases are detected. The expression (3) also constitutes an object of the list of objects returned by `Amazon Comprehend tool` when syntaxis are detected.
  ````
  {'BeginOffset':0,'EndOffset':8,'Score':0.43067169189453125,'Text':'Proximus','Type':'ORGANIZATION'}    				(1)
  {'BeginOffset':0,'EndOffset':24, 'Score':0.956875205039978,'Text':'Proximus reference offer'}    				(2)
