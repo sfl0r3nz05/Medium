@@ -11,12 +11,12 @@ Although future parts will go into the technical details of each of the project 
   <img src=https://github.com/sfl0r3nz05/Medium/blob/main/Blockchain-based%20digitization%20of%20the%20roaming%20agreement%20drafting%20process/images/roaming_agreement.png>
 </p>
  
-The **Roaming Agreement** addresses the technical and commercial components required to enable the service. During the drafting stage of the **Roaming Agreement** the parties, i.e., Mobile Network Operators (MNOs), go through a negotiation process and exactly in this process the need for digitalization has been found using the transparency promoted by blockchain technology as the basis of the interactions between the MNOs.
+The **Roaming Agreement** addresses the technical and commercial components necessary to enable the service. During the drafting phase of the Roaming Agreement the parties, i.e. the Mobile Network Operators (MNOs), go through a negotiation process that currently still uses traditional technology such as email or even postal mail. Precisely in this process has been found the reason for the project promoting a transparent digitization process promoted by blockchain technology as the basis for interactions between MNOs.
 
 ### Roaming Agreement drafting based on GSMA templates
-In order to standardize the legal commercial aspects of roaming negotiated between roaming partners for the billing of the services obtained, the GSM Association broadly outlines the content of such **Roaming Agreement** in standardized form for its members [1].
+In order to standardize the legal commercial aspects of roaming agreements, the GSM Association broadly outlines the content of such **Roaming Agreement** in standardized form for its members [1]. Thus, during the drafting phase of the agreement, the future roaming partners negotiate both technical and billing topics related to the services provided in accordance with defined templates. The digitization of the interactions between the parties is the backbone of this [project]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements).
 
-The next Table summarizes the standard templates for International **Roaming Agreement**, as well as the standard templates commonly used. The order commonly followed when creating the **Roaming Agreement** is the one established in the Table, where it is common to start with a base framework (AA.12), from which it is added the set of common annexes (AA.13). From this point, individual annexes and addendums are included depending on the operating characteristics of the agreement. It should be noted that although 99% of mobile network operators (MNOs) manage their **Roaming Agreement** based on the above-mentioned template sequence, there is no limit to the number of documents to be included.
+The next Table summarizes the standard templates for International **Roaming Agreement**, as well as the standard templates commonly used. The order commonly followed when creating the **Roaming Agreement** is the one established in the Table, where it is common to start with a base framework (AA.12), from which it is added the set of common annexes (AA.13). From this point, individual annexes and addendums are included depending on the operating characteristics of the agreement. It should be noted that although 99% of mobile network operators (MNOs) manage their **Roaming Agreement** based on the above-mentioned template sequence. The following is a brief description of each common standard template commonly used:
 
 |Standard Templates for International Roaming Agreement                              |Common use|
 |:----------------------------------------------------------------------------------:|:--------:|
@@ -36,7 +36,7 @@ The next Table summarizes the standard templates for International **Roaming Agr
 - **AA.14** involves the individual annexes containing information about the operator (e.g., contact details of the roaming team, fraud team, IREG team, TADIG team, etc.). 
 - **AA.19** constitutes an addendum to the international **Roaming Agreement** in order to determine specific properties such as charging, billing, and accounting for a specific scenario like the SMS interworking.	
 
-Therefore, a key part of the negotiation process involves the drafting of a **Roaming Agreement** based on the establishment of standard clauses, variations and customized texts with respect to the aforementioned set of templates defined by GSMA. Thus, in the process of drafting the **Roaming Agreement** operators may:
+Thus, a key part of the negotiation process involves the drafting of a **Roaming Agreement** based on the establishment of standard clauses, variations and customized texts with respect to the aforementioned set of templates defined by GSMA. Thus, in the process of drafting the **Roaming Agreement** operators may:
 
 1. Leave an article/sub-article as found in the template thereby establishing a **standard clause**.
 2. Introduce certain **variations** in the articles/sub-articles, by changing variables, e.g., MNO, dates, penalties, currencies and so on with respect to the original text, i.e., the GSMA templates.
@@ -49,7 +49,6 @@ The lifecycle of the **Roaming Agreement** negotiation process is presented as t
 </p>
 
 - **Phase** 1 allows receiving the information package from the future roaming partners, which contains as one of the main points to be analyzed by the operators is the deviations document, which contains all the requested changes with respect to the standard templates (e.g., AA.12 and AA.13) thus becoming an essential part of the negotiation. This information is exchanged between operators usually via information systems such as e-mail.
-
 - **Phase 2** allows to confirm that the **Roaming Agreement** is going ahead. This step depends largely on the circumstances of the deviation document.
 - **Phase 3** encourages one of the parties to complete the **Roaming Agreement** contract based on the deviations. In order to create the **Roaming Agreement**, either party can complete the templates.
 - **Phase 4** implies that one party sends a soft copy of the contract via email and the other confirm of received. At this point, it is common that some sections be changed, being usual that AA.12 does not change normally and AA.13 changes occasionally, although in the case of the individual annexes of rights they usually suffer changes.
