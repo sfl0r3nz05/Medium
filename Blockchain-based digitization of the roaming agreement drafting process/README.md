@@ -9,7 +9,7 @@ Although future posts will go into technical details of each of the modules that
 <img align="center" src="https://github.com/sfl0r3nz05/Medium/blob/main/Blockchain-based%20digitization%20of%20the%20roaming%20agreement%20drafting%20process/images/roaming_agreement.png">
 
 <p align="center">
-  <img width="460" height="300" src=https://github.com/sfl0r3nz05/Medium/blob/main/Blockchain-based%20digitization%20of%20the%20roaming%20agreement%20drafting%20process/images/roaming_agreement.png>
+  <img src=https://github.com/sfl0r3nz05/Medium/blob/main/Blockchain-based%20digitization%20of%20the%20roaming%20agreement%20drafting%20process/images/roaming_agreement.png>
 </p>
  
 The **Roaming Agreement** addresses the technical and commercial components required to enable the service. During the drafting stage of the **Roaming Agreement** the parties, i.e., Mobile Network Operators (MNOs), go through a negotiation process and exactly in this process the need for digitalization has been found using the transparency promoted by blockchain technology as the basis of the interactions between the MNOs.
