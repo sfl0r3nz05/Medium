@@ -11,7 +11,7 @@ Although future posts will go into technical details of each of the modules that
 The **Roaming Agreement** addresses the technical and commercial components required to enable the service. During the drafting stage of the **Roaming Agreement** the parties, i.e., Mobile Network Operators (MNOs), go through a negotiation process and exactly in this process the need for digitalization has been found using the transparency promoted by blockchain technology as the basis of the interactions between the MNOs.
 
 ### Roaming Agreement drafting based on GSMA templates
-In order to standardize the legal commercial aspects of roaming negotiated between roaming partners for the billing of the services obtained, the GSM Association broadly outlines the content of such **Roaming Agreement** in standardized form for its members.
+In order to standardize the legal commercial aspects of roaming negotiated between roaming partners for the billing of the services obtained, the GSM Association broadly outlines the content of such **Roaming Agreement** in standardized form for its members [1].
 
 The next Table summarizes the standard templates for International **Roaming Agreement**, as well as the standard templates commonly used. The order commonly followed when creating the **Roaming Agreement** is the one established in the Table, where it is common to start with a base framework (AA.12), from which it is added the set of common annexes (AA.13). From this point, individual annexes and addendums are included depending on the operating characteristics of the agreement. It should be noted that although 99% of mobile network operators (MNOs) manage their **Roaming Agreement** based on the above-mentioned template sequence, there is no limit to the number of documents to be included.
 
@@ -54,3 +54,7 @@ The lifecycle of the **Roaming Agreement** negotiation process is presented as t
 - **Phase 7** states that the party that has countersigned the document shall return one of the signed and countersigned hard copies to the other party. It is recommended that a soft copy be stored for easy access by the entire team.
 
 The **conclusion** reached at this point lies in the fact that the process of drafting the **Roaming Agreement** is mostly very 'analog' with successive exchanges of information between the parties using traditional means such as e-mail or postal mail. This opens the door to a process of digitalization of **Roaming Agreements** where blockchain technology oriented to business environments such as Hyperledger Fabric Blockchain to provide transparency in the interaction between the parties, carrying out a digitalization process on a single platform.
+
+ ## References
+
+ 1. GSMA, “Direct Wholesale Roaming Access Agreement Version 2.7 08 December 2017,” London, 2019.
