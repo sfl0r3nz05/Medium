@@ -11,3 +11,9 @@ In order to determine as accurately as possible the presence of these three char
 The following figure shows the architecture of the **NLP Engine** that integrates over a docker infrastructure, establishing as inputs the **Roaming Agreement**, as well as the **GSMA templates**; as processing layer the logic associated to the **NLP Engine** and as output the **classification of articles/sub-articles** in of standard clauses, variations and customized texts.
 
 <img src="https://github.com/sfl0r3nz05/Medium/blob/main/NLP%20Engine%20to%20detect%20standard%20clauses%2C%20variations%20and%20customized%20texts/images/images/NLP_Engine.png">
+
+The logic designed for the **NLP Engine** has two approaches: *detection* and *comparison*. 
+- *Detection* represents the location of variables in the Roaming Agreement. 
+- *Comparison* is carried out between each sub-article present in the Roaming Agreement with respect to the sub-articles present in the GSMA template.
+
+While a near-total coincidence between texts at the sub-article level represents a **standard clause**, a near-zero coincidence between texts (or simply the non-existence of the sub-article) represents a **customized text**. The intermediate case is represented by the **variation** where there is a high coincidence and the differences are given by the presence of **variables** such as MNO, date, currencies, etc.
