@@ -27,9 +27,9 @@ Variable detection goes through the following steps:
 ### Analysis based on Amazon Comprehend
 From *Amazon Comprehend Tool* entities, key phrases and syntax are detected. The piece of texts (`100 words`) sent to the Amazon Comprehend tool via `REST API` return a list of objects as shown in expression (1), when entities are been detected. This information is combined with processing and validations based on expression (2) and expression (3), allowing to determine variables. The expression (2) constitutes an object of the list of objects returned by Amazon Comprehend tool when key phrases are detected. The expression (3) also constitutes an object of the list of objects returned by `Amazon Comprehend tool` when syntaxis are detected.
  ````
- {'BeginOffset':0,'EndOffset':8,'Score':0.43067169189453125,'Text':'Proximus','Type':'ORGANIZATION'}    				(1)
- {'BeginOffset':0,'EndOffset':24, 'Score':0.956875205039978,'Text':'Proximus reference offer'}    				(2)
- {'BeginOffset': 0,'EndOffset':8,'PartOfSpeech':{'Score':0.9324524402618408,'Tag':'PROPN'}    				        (3)
+    {'BeginOffset':0,'EndOffset':8,'Score':0.43067169189453125,'Text':'Proximus','Type':'ORGANIZATION'}    				(1)
+    {'BeginOffset':0,'EndOffset':24, 'Score':0.956875205039978,'Text':'Proximus reference offer'}    				(2)
+    {'BeginOffset': 0,'EndOffset':8,'PartOfSpeech':{'Score':0.9324524402618408,'Tag':'PROPN'}    				        (3)
  ````
 
 ## Establish comparisons
