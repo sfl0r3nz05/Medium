@@ -3,8 +3,8 @@
 The following is the second approach of a six posts series associated to the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), which has as its main objective to transform **Telecom Roaming Agreement** documents and the drafting and negotiation process into a digitized version based on the transparency promoted by blockchain technology.
 In the [first post of the series]( https://medium.com/@sfl0r3nz05) was mentioned as key part of the negotiation process involves the drafting of a **Roaming Agreement** based on the establishment of standard clauses, variations and customized texts with respect to a set of templates defined by GSMA. In this way, in the process of drafting the roaming agreement operators may:
 1. Leave an article/sub-article as found in the template thereby establishing a **standard clause**.
-2. Introduce certain **variations** in the articles/sub-articles, by changing variables, e.g., MNO, dates, penalties, currencies and so on with respect to the original text, i.e., the GSMA templates.
-3. Introduce completely new articles/sub-articles that respond to particular interests by constituting **customized texts**.
+2. Introduce certain **variations** in the *articles/sub-articles*, by changing variables, e.g., MNO, dates, penalties, currencies and so on with respect to the original text, i.e., the GSMA templates.
+3. Introduce completely new *articles/sub-articles* that respond to particular interests by constituting **customized texts**.
 
 In order to determine as accurately as possible the presence of these three characteristics as part of each of the articles that make up the roaming agreement in this [project]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), a tool for text processing and analysis based on natural language processing (NLP) has been designed, which is hereinafter referred to as NLP engine.
 
@@ -14,7 +14,7 @@ The following figure shows the architecture of the **NLP Engine** that integrate
 
 The logic designed for the **NLP Engine** has two approaches: *detection* and *comparison*. 
 - *Detection* represents the location of variables in the Roaming Agreement. 
-- *Comparison* is performed between each sub-article present in the Roaming Agreement with respect to the sub-articles present in the GSMA template.
+- *Comparison* is performed between each sub-article present in the Roaming Agreement with respect to the *sub-articles* present in the GSMA template.
 
 While a near-total coincidence between texts at the sub-article level represents a **standard clause**, a near-zero coincidence between texts (or simply the non-existence of the sub-article) represents a **customized text**. The intermediate case is represented by the **variation** where there is a high coincidence and the differences are given by the presence of **variables** such as MNO, date, currencies, etc.
 
@@ -35,12 +35,12 @@ From *Amazon Comprehend Tool* entities, key phrases and syntax are detected. The
 ## Establish comparisons
 In order to establish comparisons between text elements a pre-processing is necessary:
 1. A parsing of the **Roaming Agreement** document converted into text is carried out, removing undesired characters.
-2. The parsed text is divided into articles, which in turn are divided into sub-articles.
-3. The sub-articles are used to establish the degree of `similarity` with respect to the reference represented by **GSMA template**.
+2. The parsed text is divided into articles, which in turn are divided into *sub-articles*.
+3. The *sub-articles* are used to establish the degree of `similarity` with respect to the reference represented by **GSMA template**.
 
 ### Analysis of Similarities
 
-The similarity analysis is based on Jaccard's similarity analysis, which has been selected for its simplicity of implementation for this stage of the project, however, the way the code has been developed allows to state that it is pluggable to use, for example, cosine similarity. The similarity analysis consists in comparing the sub-articles of the Roaming Agreement with the sub-articles used as reference. The expression (4) also constitutes an object of the list of objects returned by Jaccard similarity when the sub-article 1.1 is compared for one Roaming Agreement with the reference.
+The similarity analysis is based on `Jaccard's similarity analysis` [2], which has been selected for its simplicity of implementation for this stage of the project, however, the way the code has been developed allows to state that it is pluggable to use, for example, `cosine similarity`. The similarity analysis consists in comparing the *sub-articles* of the Roaming Agreement with the *sub-articles* used as reference. The expression (4) also constitutes an object of the list of objects returned by Jaccard similarity when the sub-article 1.1 is compared for one Roaming Agreement with the reference.
  
  ````
     {'id': '1.1', 'similarity': 0.7380952380952381}    				                                                (4)
@@ -48,4 +48,5 @@ The similarity analysis is based on Jaccard's similarity analysis, which has bee
 
  ## References
 
- 1. AWS, “Amazon Comprehend Developer Guide,” 2021. [Online]. Available: https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-dg.pdf. [Accessed: 01-Aug-2021].
+ 1. AWS, “Amazon Comprehend Developer Guide,” 2021. [Online]. Available: https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-dg.pdf. [Accessed: 24-Jul-2021].
+ 2. S. Gupta, “Overview of Text Similarity Metrics in Python,” May 15, 2018, 2018. [Online]. Available: https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50. [Accessed: 24-Jul-2021].
