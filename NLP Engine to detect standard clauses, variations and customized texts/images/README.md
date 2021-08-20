@@ -21,10 +21,10 @@ While a near-total coincidence between texts at the sub-article level represents
 ## Variables Detection
 Variable detection goes through the following steps:
 1. A parsing of the **Roaming Agreement** document converted into text is carried out, removing undesired characters. 
-2. The parsed text is divided into groups of 100 words, from which *entities*, *key phrases* and *syntax* are detected from Amazon Comprehend tool [1].
+2. The parsed text is divided into groups of 100 words, from which *entities*, *key phrases* and *syntax* are detected from Amazon Comprehend tool [1](https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-dg.pdf).
 
 ### Analysis based on Amazon comprehend
-The first NLP approach allows to detect entities, key phrases and syntax using the functionalities proposed by the Amazon Comprehend tool. For the text sent to the Amazon Comprehend tool via REST API, it returns a list of objects as shown in expression *(1)*, when entities are been detected. This information is combined with processing and validations based on expression *(2)* and expression *(3)*, allowing to determine variables. The expression *(2)* constitutes an object of the list of objects returned by Amazon Comprehend tool when key phrases are detected. The expression *(3)* also constitutes an object of the list of objects returned by Amazon Comprehend tool when syntaxis are detected.
+The first NLP approach allows to detect entities, key phrases and syntax using the functionalities proposed by the Amazon Comprehend tool. For the text sent to the Amazon Comprehend tool via REST API, it returns a list of objects as shown in expression (1), when entities are been detected. This information is combined with processing and validations based on expression (2) and expression (3), allowing to determine variables. The expression (2) constitutes an object of the list of objects returned by Amazon Comprehend tool when key phrases are detected. The expression (3) also constitutes an object of the list of objects returned by Amazon Comprehend tool when syntaxis are detected.
  ````
  {'BeginOffset':0,'EndOffset':8,'Score':0.43067169189453125,'Text':'Proximus','Type':'ORGANIZATION'}    				(1)
  {'BeginOffset':0,'EndOffset':24, 'Score':0.956875205039978,'Text':'Proximus reference offer'}    				(2)
@@ -36,7 +36,7 @@ The first NLP approach allows to detect entities, key phrases and syntax using t
 
 ### Analysis of Similarities
 
-The similarity analysis is based on Jaccard's similarity analysis, which has been selected for its simplicity of implementation for this stage of the project, however, the way the code has been developed allows to state that it is pluggable to use, for example, cosine similarity. The similarity analysis consists in comparing the sub-articles of the Roaming Agreement with the sub-articles used as reference. The expression *(4)* also constitutes an object of the list of objects returned by Jaccard similarity when the sub-article 1.1 is compared for one Roaming Agreement with the reference.
+The similarity analysis is based on Jaccard's similarity analysis, which has been selected for its simplicity of implementation for this stage of the project, however, the way the code has been developed allows to state that it is pluggable to use, for example, cosine similarity. The similarity analysis consists in comparing the sub-articles of the Roaming Agreement with the sub-articles used as reference. The expression (4) also constitutes an object of the list of objects returned by Jaccard similarity when the sub-article 1.1 is compared for one Roaming Agreement with the reference.
  
  ````
     {'id': '1.1', 'similarity': 0.7380952380952381}    				                                                (4)
@@ -44,4 +44,4 @@ The similarity analysis is based on Jaccard's similarity analysis, which has bee
 
  ## References
 
- ###### [1] AWS, “Amazon Comprehend Developer Guide,” 2021. [Online]. Available: https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-dg.pdf. [Accessed: 01-Aug-2021].
+ 1. AWS, “Amazon Comprehend Developer Guide,” 2021. [Online]. Available: https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-dg.pdf. [Accessed: 01-Aug-2021].
