@@ -7,7 +7,7 @@ Although future posts will go into technical details of each of the modules that
 **International mobile roaming** is a service that allows mobile users to continue to use their mobile phone or other mobile device to make and receive voice calls and text messages, browse the internet, and send and receive emails, while visiting another country. **Roaming** extends the coverage of the home operator’s retail voice and SMS services, allowing the mobile user to continue using their home operator phone number and data services within another country. The seamless extension of coverage is enabled by a wholesale **Roaming Agreement** between a mobile user’s home operator and the visited mobile operator network.
 
 <p align="center">
-  <img width="490" height="289" src=https://github.com/sfl0r3nz05/Medium/blob/main/Blockchain-based%20digitization%20of%20the%20roaming%20agreement%20drafting%20process/images/roaming_agreement.png>
+  <img width="475" height="289" src=https://github.com/sfl0r3nz05/Medium/blob/main/Blockchain-based%20digitization%20of%20the%20roaming%20agreement%20drafting%20process/images/roaming_agreement.png>
 </p>
  
 The **Roaming Agreement** addresses the technical and commercial components required to enable the service. During the drafting stage of the **Roaming Agreement** the parties, i.e., Mobile Network Operators (MNOs), go through a negotiation process and exactly in this process the need for digitalization has been found using the transparency promoted by blockchain technology as the basis of the interactions between the MNOs.
