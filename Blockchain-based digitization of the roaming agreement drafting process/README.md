@@ -44,7 +44,7 @@ Therefore, a key part of the negotiation process involves the drafting of a **Ro
 ### Overview of the Roaming Agreement negotiation process
 The lifecycle of the **Roaming Agreement** negotiation process is presented as the compilation of a set of best practices integrated in 7 phases. These phases do not represent standards or rules that must be followed in a mandatory way.
 <p align="center">
-<img src="https://github.com/sfl0r3nz05/Medium/blob/main/Blockchain-based%20digitization%20of%20the%20roaming%20agreement%20drafting%20process/images/negotiation_process.png">
+<img width="572" height="457" src="https://github.com/sfl0r3nz05/Medium/blob/main/Blockchain-based%20digitization%20of%20the%20roaming%20agreement%20drafting%20process/images/negotiation_process.png">
 </p>
 
 - **Phase** 1 allows receiving the information package from the future roaming partners, which contains as one of the main points to be analyzed by the operators is the deviations document, which contains all the requested changes with respect to the standard templates (e.g., AA.12 and AA.13) thus becoming an essential part of the negotiation. This information is exchanged between operators usually via information systems such as e-mail.
