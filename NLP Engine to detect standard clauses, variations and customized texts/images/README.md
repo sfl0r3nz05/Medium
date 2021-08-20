@@ -21,7 +21,7 @@ While a near-total coincidence between texts at the sub-article level represents
 ## Variables Detection
 Variable detection goes through the following steps:
 1. A parsing of the **Roaming Agreement** document converted into text is carried out, removing undesired characters. 
-2. The parsed text is divided into groups of 100 words, from which *entities*, *key phrases* and *syntax* are detected from Amazon Comprehend tool [1](https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-dg.pdf).
+2. The parsed text is divided into groups of 100 words, from which *entities*, *key phrases* and *syntax* are detected from Amazon Comprehend tool [1].
 
 ### Analysis based on Amazon comprehend
 The first NLP approach allows to detect entities, key phrases and syntax using the functionalities proposed by the Amazon Comprehend tool. For the text sent to the Amazon Comprehend tool via REST API, it returns a list of objects as shown in expression (1), when entities are been detected. This information is combined with processing and validations based on expression (2) and expression (3), allowing to determine variables. The expression (2) constitutes an object of the list of objects returned by Amazon Comprehend tool when key phrases are detected. The expression (3) also constitutes an object of the list of objects returned by Amazon Comprehend tool when syntaxis are detected.
