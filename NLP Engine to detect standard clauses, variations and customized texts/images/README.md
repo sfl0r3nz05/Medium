@@ -17,3 +17,24 @@ The logic designed for the **NLP Engine** has two approaches: *detection* and *c
 - *Comparison* is performed between each sub-article present in the Roaming Agreement with respect to the sub-articles present in the GSMA template.
 
 While a near-total coincidence between texts at the sub-article level represents a **standard clause**, a near-zero coincidence between texts (or simply the non-existence of the sub-article) represents a **customized text**. The intermediate case is represented by the **variation** where there is a high coincidence and the differences are given by the presence of **variables** such as MNO, date, currencies, etc.
+
+## Variables Detection
+
+### Analysis based on Amazon comprehend
+The first NLP approach allows to detect entities, key phrases and syntax using the functionalities proposed by the Amazon Comprehend tool. For the text sent to the Amazon Comprehend tool via REST API, it returns a list of objects as shown in expression (1), when entities are been detected. This information is combined with processing and validations based on expression (2) and expression (3), allowing to determine variables. The expression (2) constitutes an object of the list of objects returned by Amazon Comprehend tool when key phrases are detected. The expression (3) also constitutes an object of the list of objects returned by Amazon Comprehend tool when syntaxis are detected.
+ ````
+ {'BeginOffset':0,'EndOffset':8,'Score':0.43067169189453125,'Text':'Proximus','Type':'ORGANIZATION'}    (1)
+ {'BeginOffset':0,'EndOffset':24, 'Score':0.956875205039978,'Text':'Proximus reference offer'}          (2)
+ {'BeginOffset': 0,'EndOffset':8,'PartOfSpeech':{'Score':0.9324524402618408,'Tag':'PROPN'}		        (3)
+ ````
+
+## Establish comparisons
+
+
+### Analysis of Similarities
+
+The similarity analysis is based on Jaccard's similarity analysis, which has been selected for its simplicity of implementation for this stage of the project, however, the way the code has been developed allows to state that it is pluggable to use, for example, cosine similarity. The similarity analysis consists in comparing the sub-articles of the Roaming Agreement with the sub-articles used as reference. The expression (4) also constitutes an object of the list of objects returned by Jaccard similarity when the sub-article 1.1 is compared for one Roaming Agreement with the reference.
+ 
+ ````
+    {'id': '1.1', 'similarity': 0.7380952380952381}    							                        (4)
+ ````
