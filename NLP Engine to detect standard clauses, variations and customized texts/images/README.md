@@ -10,7 +10,7 @@ In order to determine as accurately as possible the presence of these three char
 
 The following figure shows the architecture of the **NLP Engine** that integrates over a docker infrastructure, establishing as inputs the **Roaming Agreement**, as well as the **GSMA templates**; as processing layer the logic associated to the **NLP Engine** and as output the **classification of articles/sub-articles** in of standard clauses, variations and customized texts.
 <p align="center">
-   <img src="https://github.com/sfl0r3nz05/Medium/blob/main/NLP%20Engine%20to%20detect%20standard%20clauses%2C%20variations%20and%20customized%20texts/images/images/NLP_Engine.png">
+   <img width="239" height="322" src="https://github.com/sfl0r3nz05/Medium/blob/main/NLP%20Engine%20to%20detect%20standard%20clauses%2C%20variations%20and%20customized%20texts/images/images/NLP_Engine.png">
 <p>
 
 ## Logic behind NLP Engine
