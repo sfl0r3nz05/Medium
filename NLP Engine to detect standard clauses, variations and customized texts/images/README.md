@@ -14,6 +14,6 @@ The following figure shows the architecture of the **NLP Engine** that integrate
 
 The logic designed for the **NLP Engine** has two approaches: *detection* and *comparison*. 
 - *Detection* represents the location of variables in the Roaming Agreement. 
-- *Comparison* is carried out between each sub-article present in the Roaming Agreement with respect to the sub-articles present in the GSMA template.
+- *Comparison* is performed between each sub-article present in the Roaming Agreement with respect to the sub-articles present in the GSMA template.
 
 While a near-total coincidence between texts at the sub-article level represents a **standard clause**, a near-zero coincidence between texts (or simply the non-existence of the sub-article) represents a **customized text**. The intermediate case is represented by the **variation** where there is a high coincidence and the differences are given by the presence of **variables** such as MNO, date, currencies, etc.
