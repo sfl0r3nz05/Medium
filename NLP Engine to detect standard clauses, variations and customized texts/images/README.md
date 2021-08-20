@@ -52,9 +52,21 @@ The similarity analysis is based on `Jaccard's similarity analysis` [2], which h
  Once the determination of the **variables**, the subsequent similarity analysis to classify `sub-articles` into: **standard clauses**, **variations** and **customized texts** and the existing **variables** within the **variations** have been identified, further processing is performed to populate file with the classification of articles/sub-articles.
 
  ## Accuracy determination
- Since pdf files consist of unstructured text and e.g., undesired characters may remain despite parsing of the text, it is mandatory determine the accuracy of the results obtained once the file with the **classification of articles/sub-articles** has been populated.
+ Since pdf files consist of unstructured text and e.g., undesired characters may remain despite parsing of the text, it is mandatory determine the **accuracy** of the results obtained once the file with the **classification of articles/sub-articles** has been populated. This **accuracy analysis** involves establishing a comparison between the sub-articles populated in the output file with respect to the sub-articles existing in the input file containing the roaming agreements. For that purpose the text comparison tool [Countwordsfree](https://countwordsfree.com/comparetexts) has been used manually copying sub-article by sub-article. For each sub-article is determined:
+1.	Common percentage of words between compared sub-articles
+2.	Difference percentage of words between compared sub-articles
+3.	Common words between compared sub-articles
+4.	Difference words between compared sub-articles
 
- ## References
+Considering that for each sub-article the characters that determine the differences have been analyzed, determining that they are mostly end-of-line characters, quotation marks, parentheses and brackets, the threshold of the common percentage of words is determined as the worst case, i.e., where a greater combination of these characters appears. From the threshold, the rest of the cases found with lower common percentage of words will be considered failures.
 
- 1. AWS, “Amazon Comprehend Developer Guide,” 2021. [Online]. Available: https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-dg.pdf. [Accessed: 24-Jul-2021].
- 2. S. Gupta, “Overview of Text Similarity Metrics in Python,” May 15, 2018, 2018. [Online]. Available: https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50. [Accessed: 24-Jul-2021].
+|Roaming Agreement (PDF File)|Threshold |Sub-article above the threshold|Sub-article below the threshold|
+|:--------------------------:|:--------:|:-----------------------------:|:-----------------------------:|
+|Proximus RA                 |78.43     |51                             |21                             |
+|Orange RA                   |78.74     |70                             |14                             |
+
+Although the results need to be improved, being the improvements, an important part of the project's "To Do", the results can be considered acceptable, and therefore the way is clear to move the project to production.
+
+## References
+1. AWS, “Amazon Comprehend Developer Guide,” 2021. [Online]. Available: https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-dg.pdf. [Accessed: 24-Jul-2021].
+2. S. Gupta, “Overview of Text Similarity Metrics in Python,” May 15, 2018, 2018. [Online]. Available: https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50. [Accessed: 24-Jul-2021].
