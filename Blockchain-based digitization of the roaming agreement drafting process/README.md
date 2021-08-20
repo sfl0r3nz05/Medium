@@ -17,8 +17,6 @@ In order to standardize the legal commercial aspects of roaming negotiated betwe
 
 The next Table summarizes the standard templates for International **Roaming Agreement**, as well as the standard templates commonly used. The order commonly followed when creating the **Roaming Agreement** is the one established in the Table, where it is common to start with a base framework (AA.12), from which it is added the set of common annexes (AA.13). From this point, individual annexes and addendums are included depending on the operating characteristics of the agreement. It should be noted that although 99% of mobile network operators (MNOs) manage their **Roaming Agreement** based on the above-mentioned template sequence, there is no limit to the number of documents to be included.
 
-<p align="center">
-
 |Standard Templates for International Roaming Agreement                              |Common use|
 |:----------------------------------------------------------------------------------:|:--------:|
 |AA.12: International Roaming Agreement (Base Legal Framework)	                     |X         |
@@ -31,8 +29,6 @@ The next Table summarizes the standard templates for International **Roaming Agr
 |AA.60: Addendum to the International Roaming Agreement Internetworking Template     |          |
 |AA.70: Addendum to the International Roaming Agreement MMS Hubbing Agreement        |	        |
 |AA.71: Addendum to the International Roaming Agreement SMS Hubbing Agreement        |          |
-
-</p>
 
 - **AA.12** constitutes a standard GSMA or Permanent Reference Document. 
 - **AA.13** contains the common annexes with operational information (e.g., information on tap file, billing data, settlement procedure, customer care, fraud, etc.). 
