@@ -27,11 +27,11 @@ While a near-total coincidence between texts at the sub-article level represents
 ### Detection of Variables
 Variable detection goes through the following steps:
 1. A parsing of the **Roaming Agreement** document converted into text is carried out, removing undesired characters. 
-2. The parsed text is divided into groups of `100 words`, from which `entities`, `key phrases` and `syntax` are detected from `Amazon Comprehend tool` [1].
-3. Post-processing mechanisms are applied based on the combination of the detected elements, i.e., `entities`, `key phrases` and `syntax`.
+2. The parsed text is divided into groups of *100 words*, from which *entities*, *key phrases* and *syntax* are detected from **Amazon Comprehend tool** [1].
+3. Post-processing mechanisms are applied based on the combination of the detected elements, i.e., *entities*, *key phrases* and *syntax*.
 
 #### Analysis based on Amazon Comprehend
-From *Amazon Comprehend Tool* entities, key phrases and syntax are detected. The piece of texts (`100 words`) sent to the Amazon Comprehend tool via `REST API` return a list of objects as shown in expression (1), when entities are been detected. This information is combined with processing and validations based on expression (2) and expression (3), allowing to determine **variables**. The expression (2) constitutes an object of the list of objects returned by Amazon Comprehend tool when key phrases are detected. The expression (3) also constitutes an object of the list of objects returned by `Amazon Comprehend tool` when syntaxis are detected.
+From **Amazon Comprehend Tool** *entities*, *key phrases* and *syntax* are detected. The piece of texts (*100 words*) sent to the **Amazon Comprehend tool via** REST API return a list of objects as shown in expression (1), when entities are been detected. This information is combined with processing and validations based on expression (2) and expression (3), allowing to determine **variables**. The expression (2) constitutes an object of the list of objects returned by Amazon Comprehend tool when key phrases are detected. The expression (3) also constitutes an object of the list of objects returned by **Amazon Comprehend tool** when syntaxis are detected.
 
  ````
     {'BeginOffset':0,'EndOffset':8,'Score':0.43067169189453125,'Text':'Proximus','Type':'ORGANIZATION'}				(1)
@@ -43,11 +43,11 @@ From *Amazon Comprehend Tool* entities, key phrases and syntax are detected. The
 In order to establish comparisons between text elements a pre-processing is necessary:
 1. A parsing of the **Roaming Agreement** document converted into text is carried out, removing undesired characters.
 2. The parsed text is divided into articles, which in turn are divided into *sub-articles*.
-3. The *sub-articles* are used to establish the degree of `similarity` with respect to the reference represented by **GSMA template**.
-4. In the case that from the similarity analysis it is determined that the sub-article is a variation, then we proceed to looking for the respective **variables** within the variations.
+3. The *sub-articles* are used to establish the degree of *similarity* with respect to the reference represented by **GSMA template**.
+4. In the case that from the *similarity* analysis it is determined that the sub-article is a variation, then we proceed to looking for the respective **variables** within the variations.
 
 #### Analysis of Similarities
-The similarity analysis is based on `Jaccard's similarity analysis` [2], which has been selected for its simplicity of implementation for this stage of the project, however, the way the code has been developed allows to state that it is pluggable to use, for example, `cosine similarity`. The similarity analysis consists in comparing the *sub-articles* of the **Roaming Agreement** with the *sub-articles* used as reference. The expression (4) also constitutes an object of the list of objects returned by Jaccard similarity when the *sub-article* 1.1 is compared for one **Roaming Agreement** with the reference.
+The *similarity* analysis is based on *Jaccard's similarity analysis* [2], which has been selected for its simplicity of implementation for this stage of the project, however, the way the code has been developed allows to state that it is pluggable to use, for example, *cosine similarity*. The similarity analysis consists in comparing the *sub-articles* of the **Roaming Agreement** with the *sub-articles* used as reference. The expression (4) also constitutes an object of the list of objects returned by *Jaccard similarity* when the *sub-article* 1.1 is compared for one **Roaming Agreement** with respect to the **sub-article* present in the GSMA template.
  
  ````
     {'id': '1.1', 'similarity': 0.7380952380952381}    				                                                (4)
