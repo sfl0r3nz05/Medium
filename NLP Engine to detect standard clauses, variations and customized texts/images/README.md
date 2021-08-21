@@ -1,14 +1,17 @@
 # NLP Engine to detect standard clauses, variations and customized texts
 
-The following is **Part 2** of a **6-Part series** associated to the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), with the main objective of *transforming the **Telecom Roaming Agreement** drafting and negotiation process into a digitalized version based on the transparency promoted by **blockchain** technology*.
-In the [first post of the series](https://github.com/sfl0r3nz05/Medium/tree/main/Blockchain-based%20digitization%20of%20the%20roaming%20agreement%20drafting%20process) was mentioned as key part of the negotiation process involves the drafting of a **Roaming Agreement** based on the establishment of standard clauses, variations and customized texts with respect to a set of templates defined by GSMA. In this way, in the process of drafting the roaming agreement operators may:
+The following is **Part-2** of a **6-Part series** associated to the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), with the main objective of *transforming the **Telecom Roaming Agreement** drafting and negotiation process into a digitalized version based on the transparency promoted by **blockchain** technology*.
+
+In the [Part-1 of the series](https://github.com/sfl0r3nz05/Medium/tree/main/Blockchain-based%20digitization%20of%20the%20roaming%20agreement%20drafting%20process) was mentioned that during *negotiation process of **Roaming Agreement** drafting*, the parties, i.e., MNOs, should analyze the articles/sub-articles contained in the standard templates defined by GSMA to determine whether:
+
 1. Leave an article/sub-article as found in the template thereby establishing a **standard clause**.
-2. Introduce certain **variations** in the *articles/sub-articles*, by changing **variables**, e.g., MNO, dates, penalties, currencies and so on with respect to the original text, i.e., the GSMA templates.
-3. Introduce completely new *articles/sub-articles* that respond to particular interests by constituting **customized texts**.
+2. Introduce certain **variations** in the articles/sub-articles, by changing variables, e.g., MNO, dates, penalties, currencies and so on with respect to the original text, i.e., the GSMA templates.
+3. Introduce completely new articles/sub-articles that respond to particular interests by constituting **customized texts**.
+4. Specify the value of certain **variables** that are found in a certain text, such as dates, names of entities, amounts and others.
 
-In order to determine as accurately as possible the presence of these three characteristics as part of each of the articles that make up the roaming agreement in this [project]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), a tool for text processing and analysis based on natural language processing (NLP) has been designed, which is hereinafter referred to as NLP engine.
+In order to determine as accurately as possible the presence of these four characteristics as part of each of the articles that make up the roaming agreement in this [project]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), a tool for text processing and analysis based on *Natural Language Processing (NLP)* has been designed, which is hereinafter referred to as NLP engine.
 
-The following figure shows the architecture of the **NLP Engine** that integrates over a docker infrastructure, establishing as inputs the **Roaming Agreement**, as well as the **GSMA templates**; as processing layer the logic associated to the **NLP Engine** and as output the **classification of articles/sub-articles** in of standard clauses, variations and customized texts.
+The following figure shows the *overall architecture* of the **NLP Engine** that integrates over a docker infrastructure, establishing as inputs the **Roaming Agreement**, as well as the **GSMA templates**; as processing layer the logic associated to the **NLP Engine** and as output the **classification of articles/sub-articles** in of *standard clauses*, *variations*, *customized texts* and *variables*.
 <p align="center">
    <img width="239" height="322" src="https://github.com/sfl0r3nz05/Medium/blob/main/NLP%20Engine%20to%20detect%20standard%20clauses%2C%20variations%20and%20customized%20texts/images/images/NLP_Engine.png">
 <p>
@@ -67,6 +70,8 @@ Considering that for each sub-article the characters that determine the differen
 |Orange RA                   |78.74     |70                             |14                             |
 
 Although the results need to be improved, being the improvements, an important part of the project's "To Do", the results can be considered acceptable, and therefore the way is clear to move the project to production.
+
+In our next part (Part-3), we will start the discussion of our proposed design of the *Hyperledger Fabric Blockchain chaincode* to manage digitalization of the drafting and negotiation process of  of **Roaming Agreements** providing a transparent and auditable mechanism to capture all the interactions between the parties.
 
 ## References
 1. AWS, “Amazon Comprehend Developer Guide,” 2021. [Online]. Available: https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-dg.pdf. [Accessed: 24-Jul-2021].
