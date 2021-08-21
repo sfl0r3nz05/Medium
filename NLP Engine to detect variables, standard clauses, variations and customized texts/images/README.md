@@ -75,7 +75,7 @@ The first **accuracy analysis** involves randomly selecting 5 articles from each
 |Observation No   |FP = 4           |TN = 2         |
 
 ## Accuracy determination based on symbol comparison
-The second **accuracy analysis** involves establishing a comparison between the sub-articles populatedin the output file with respect to the sub-articles existing in the input file containing the roamingagreements. For that purpose, the text comparison tool [Countwordsfree](https://countwordsfree.comcomparetexts) has been used manually copying sub-article by sub-article. For each sub-article isdetermined:
+The second **accuracy analysis** involves establishing a comparison between the sub-articles populatedin the output file with respect to the sub-articles existing in the input file containing the roamingagreements. For that purpose, the text comparison tool [Countwordsfree](https://countwordsfree.comcomparetexts) has been used manually copying sub-article by sub-article. For each sub-article is determined:
  
 1.	Common percentage of words between compared sub-articles.
 2.	Difference percentage of words between compared sub-articles.
