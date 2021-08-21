@@ -59,7 +59,7 @@ The *similarity* analysis is based on *Jaccard's similarity analysis* [2], which
 ## Accuracy determination
 Since pdf files consist of unstructured text and e.g., undesired characters may remain despite parsing of the text, it is mandatory determine the **accuracy** of the results obtained once the file with the **classification of articles/sub-articles** has been populated. For this purpose, two types of mechanisms have been used to determine the **accuracy of the results**. On the one hand, a verification based on human eye inspection and on the other hand, a verification based on symbol comparison. The tests will be performed on two **Roaming Agreements** sample of the MNOs *Proximus* and *Orange*.
 
-### Accuracy determination based on human eye verification
+### Accuracy determination based on human eye inspection
 The first **accuracy analysis** involves randomly selecting 5 articles from each of the sample **Roaming Agreements** and performing a visual inspection (human-eye inspection) to determine the number of *variables*, *variations*, *standard clauses* and *custom texts* that exist. The results obtained are then compared with the values populated in the **article and sub-article classification file** for the same articles. Considering that the results obtained from the visual inspection constitute the *observations* and the values collected from the **article and sub-article classification file** constitute the *predicted values*, the confusion matrices obtained are as follows:
 
 ###### Proximus Roaming Agreement
