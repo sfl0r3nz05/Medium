@@ -69,10 +69,10 @@ The first **accuracy analysis** involves randomly selecting 5 articles from each
 |Observation No   |FP = 5           |TN = 2         |
 
 ###### Orange Roaming Agreement
-|n = 33           |Predicted: YES   |Predicted: No  |
+|n = 30           |Predicted: YES   |Predicted: No  |
 |:---------------:|:---------------:|:-------------:|
-|Observation Yes  |TP = 19          |FN = 7         |
-|Observation No   |FP = 5           |TN = 2         |
+|Observation Yes  |TP = 13          |FN = 11         |
+|Observation No   |FP = 4           |TN = 2         |
 
 ## Accuracy determination based on symbol comparison
 The second **accuracy analysis** involves establishing a comparison between the sub-articles populatedin the output file with respect to the sub-articles existing in the input file containing the roamingagreements. For that purpose, the text comparison tool [Countwordsfree](https://countwordsfree.comcomparetexts) has been used manually copying sub-article by sub-article. For each sub-article isdetermined:
