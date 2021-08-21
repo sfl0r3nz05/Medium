@@ -1,4 +1,4 @@
-# NLP Engine to detect standard clauses, variations and customized texts
+# NLP Engine to detect variables, standard clauses, variations and customized texts
 
 The following is **Part-2** of a **6-Part series** associated to the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), with the main objective of *transforming the **Telecom Roaming Agreement** drafting and negotiation process into a digitalized version based on the transparency promoted by **blockchain** technology*.
 
@@ -13,7 +13,7 @@ In order to determine as accurately as possible the presence of these four chara
 
 The following figure shows the *overall architecture* of the **NLP Engine** that integrates over a docker infrastructure, establishing as inputs the **Roaming Agreement**, as well as the **GSMA templates**; as processing layer the logic associated to the **NLP Engine** and as output the **classification of articles/sub-articles** in of *standard clauses*, *variations*, *customized texts* and *variables*.
 <p align="center">
-   <img width="239" height="322" src="https://github.com/sfl0r3nz05/Medium/blob/main/NLP%20Engine%20to%20detect%20standard%20clauses%2C%20variations%20and%20customized%20texts/images/images/NLP_Engine.png">
+   <img width="239" height="322" src="https://github.com/sfl0r3nz05/Medium/blob/main/NLP%20Engine%20to%20detect%20variables%20standard%20clauses%2C%20variations%20and%20customized%20texts/images/images/NLP_Engine.png">
 <p>
 
 ## Logic behind NLP Engine
