@@ -21,7 +21,7 @@ In order to standardize the legal commercial aspects of **Roaming Agreement**, t
 3. Introduce completely new articles/sub-articles that respond to particular interests by constituting **customized texts**.
 4. Specify the value of certain **variables** that are found in a certain text, such as dates, names of entities, amounts and others.
 
-To clarify the *standardarizations* presented by GSMA, the next Table summarizes the *standard templates* for International **Roaming Agreement**, as well as the *standard templates* commonly used. The order commonly followed when creating the **Roaming Agreement** is the one established in the Table, where it is common to start with a base framework (AA.12), from which it is added the set of common annexes (AA.13). From this point, individual annexes and addendums are included depending on the operating characteristics of the agreement. It should be noted that although 99% of mobile network operators (MNOs) manage their **Roaming Agreement** based on the above-mentioned template sequence. The following is a brief description of each common standard template commonly used:
+To clarify the *standardarizations* presented by GSMA, the next Table summarizes the *standard templates* for International **Roaming Agreement**, as well as the *standard templates* commonly used. The order commonly followed when creating the **Roaming Agreement** is the one established in the Table, where it is common to start with a base framework (AA.12), from which it is added the set of common annexes (AA.13). From this point, individual annexes and addendums are included depending on the operating characteristics of the agreement. It should be noted that although 99% of mobile network operators (MNOs) manage their **Roaming Agreement** based on the above-mentioned template sequence, there is no limit to the number of documents to be included. The following is a brief description of each common standard template commonly used:
 
 |Standard Templates for International Roaming Agreement                              |Common use|
 |:----------------------------------------------------------------------------------:|:--------:|
@@ -29,7 +29,7 @@ To clarify the *standardarizations* presented by GSMA, the next Table summarizes
 |AA.13: International Roaming Agreement- Common Annexes	                             |X         |
 |AA.14: Individual Annexes Roaming Agreement Exchange Operational Data	             |X         |
 |AA.14: Individual Annexes Roaming Agreement Exchange Inter-Operator Tariff	         |X         |
-|AA.19: Addendum to the International Roaming Agreement SMS Internetworking Agreement|	        |
+|AA.19: Addendum to the International Roaming Agreement SMS Internetworking Agreement|X	        |
 |AA.40: Addendum to the International Roaming Agreement MMS Internetworking Agreement|	        |
 |AA.43: Addendum to the International Roaming Agreement WLAN Roaming Agreement       |          |
 |AA.60: Addendum to the International Roaming Agreement Internetworking Template     |          |
@@ -59,7 +59,7 @@ The lifecycle of the **Roaming Agreement** negotiation process is presented as t
 
 The **conclusion** reached at this point lies in the fact that the process of drafting the **Roaming Agreement** is mostly very 'analog' with successive exchanges of information between the parties using traditional means such as email or regular mail. While other digital platforms also offers a digitized version of this process, yet these platforms lack the transparency and auditbility that **blockchain** solutions can provide. The digitalization of the drafting and negotiation process of  of **Roaming Agreements** using **blockchain technology** such as **Hyperledger Fabric Blockchain** can provide the transparency and auditability in capturing all the interactions between the parties. 
 
-In our next part (Part-2), we will start the discussion of our proposed use of *Natural Language Processing NLP* as an engine to digitize the legal text in the **Romaing Agreements** drafts and how to build a library that can map the different Articles, Variations and Variables in the text.
+In our next part (Part-2), we will start the discussion of our proposed use of *Natural Language Processing (NLP)* as an engine to digitize the legal text in the **Romaing Agreements** drafts and how to build a library that can map the different Articles, Variations and Variables in the text.
 
  ## References
 
