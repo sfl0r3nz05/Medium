@@ -5,7 +5,7 @@ The following is **Part-1** of a **6-Part series** associated to the project [Th
 Although future parts will go into the technical details of each of the project components, the purpose of this first part is to address the initial vision of the [project]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements) by outlining the problem it solves. Next, we focus ou discussion on main components of **Roaming Agreements**, and highlighting the value that **blockchain** technology brings to enable digitization and digitilization of these processes.
 
 ### Overview of Roaming and Roaming Agreement
-**International mobile roaming** is a service that allows users and devices (IoT) to continue using the mobile connectivity services such as to make and receive voice calls and text messages, browse the internet, and send and receive emails, while visiting another country or another network. **Roaming** extends the coverage of the home operator’s mobile network services, allowing users and devices to continue using their home operator phone number and data services within another country/network. The backoffice part of this seamless extension of coverage is enabled by the process of wholesale **Roaming Agreement**, which are techinal, commercial and legal documents that governs the relationship and billing and accounting between the user’s home operator and the visited mobile operator network.
+The roaming procedure maintain persistent connectivity of the subscribers across different networks and geographical regions. Roaming refers to the capability for a subscriber to access the mobile services offered by the Visited Public Mobile Network (VPMN) via the Home Public Mobile Network (HPMN), when moving out of the coverage range of HPMN [1]. The backoffice part of this seamless extension of coverage is enabled by the process of wholesale **Roaming Agreement**, which are techinal, commercial and legal documents that governs the relationship and billing and accounting between the user’s home operator and the visited mobile operator network.
 
 <p align="center">
   <img src=https://github.com/sfl0r3nz05/Medium/blob/main/Blockchain-based%20digitization%20of%20the%20roaming%20agreement%20drafting%20process/images/roaming_agreement.png>
@@ -14,7 +14,7 @@ Although future parts will go into the technical details of each of the project 
 The **Roaming Agreement** addresses the technical and commercial components necessary to enable the service to a **Roaming Customer**. During the drafting phase of the **Roaming Agreement** the parties, i.e. the Mobile Network Operators (MNOs), go through a **negotiation process** that currently still uses asynchrounous flows such as email or even regular mail for information exchange. *This manual, slow and untrustworthy process has been the reason for the project to promote a transparent negotiation process that ensures the roaming agreement drafting using blockchain technology to record the interactions between MNOs, ensuring reliable traceability*. To elborate more, next we describe further the two processes: drafting and negotiation of the **Roaming Agreement**.
 
 ### Roaming Agreement drafting based on GSMA templates
-In order to standardize the legal commercial aspects of **Roaming Agreement**, the GSM Association broadly outlines the content of such **Roaming Agreement** in standardized form for its members [1]. Thus, during the drafting process of the agreement, the parties should analyze the articles/sub-articles contained in the *standard templates* to determine whether:
+In order to standardize the legal commercial aspects of **Roaming Agreement**, the GSM Association broadly outlines the content of such **Roaming Agreement** in standardized form for its members [2]. Thus, during the drafting process of the agreement, the parties should analyze the articles/sub-articles contained in the *standard templates* to determine whether:
 
 1. Leave an article/sub-article as found in the template thereby establishing a **standard clause**.
 2. Introduce certain **variations** in the articles/sub-articles, by changing variables, e.g., MNO, dates, penalties, currencies and so on with respect to the original text, i.e., the GSMA templates.
@@ -63,4 +63,5 @@ In our next part (Part-2), we will start the discussion of our proposed use of *
 
  ## References
 
- 1. GSMA, “Direct Wholesale Roaming Access Agreement Version 2.7 08 December 2017,” London, 2019.
+ 1. I. Tanaka, "Volte roaming and interconnection standard technology", NTT Docomo Technical Journal, vol. 15, no. 2, pp. 37-41, 2013
+ 2. GSMA, “Direct Wholesale Roaming Access Agreement Version 2.7 08 December 2017,” London, 2019.
