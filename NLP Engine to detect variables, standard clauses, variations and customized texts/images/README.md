@@ -64,7 +64,7 @@ This **accuracy analysis** involves randomly selecting 5 articles from the sampl
 
 ###### Proximus Roaming Agreement
 |n = 33           |stdClause|variation|customText| 
-|:---------------:|:-------:|:-------:|---------:| 
+|:---------------:|:-------:|:-------:|:--------:| 
 |stdClause        |9        |1        |0         |
 |variation        |1        |17       |3         | 
 |customText       |0        |0        |3         |
