@@ -57,39 +57,20 @@ The *similarity* analysis is based on *Jaccard's similarity analysis* [2], which
  Once the determination of the **variables**, the subsequent similarity analysis to classify `sub-articles` into: **standard clauses**, **variations** and **customized texts** and the existing **variables** within the **variations** have been identified, further processing is performed to populate file with the classification of articles/sub-articles.
 
 ## Accuracy determination
-Since pdf files consist of unstructured text and e.g., undesired characters may remain despite parsing of the text, it is mandatory determine the **accuracy** of the results obtained once the file with the **classification of articles/sub-articles** has been populated. For this purpose, two types of mechanisms have been used to determine the **accuracy of the results**. On the one hand, a verification based on human eye inspection and on the other hand, a verification based on symbol comparison. The tests will be performed on two **Roaming Agreements** sample of the MNOs *Proximus* and *Orange*.
+Since pdf files consist of unstructured text and e.g., undesired characters may remain despite parsing of the text, it is mandatory determine the **accuracy** of the results obtained once the file with the **classification of articles/sub-articles** has been populated. For this purpose, a verification based on human eye inspection mechanism has been performed. The following experimental tests were performed on the **Roaming Agreement** sample of the MNO *Proximus*. 
 
 ### Accuracy determination based on human eye inspection
-The first **accuracy analysis** involves randomly selecting 5 articles from each of the sample **Roaming Agreements** and performing a visual inspection (human-eye inspection) to determine the number of *variables*, *variations*, *standard clauses* and *custom texts* that exist. The results obtained are then compared with the values populated in the **article and sub-article classification file** for the same articles. Considering that the results obtained from the visual inspection constitute the *observations* and the values collected from the **article and sub-article classification file** constitute the *predicted values*, the confusion matrices obtained are as follows:
+This **accuracy analysis** involves randomly selecting 5 articles from the sample **Roaming Agreement** and performing a visual inspection (human-eye inspection) to determine the number of *variations*, *standard clauses* and *custom texts* that exist. The results obtained are then compared with the values populated in the  **article and sub-article classification file** for the same articles. The confusion matrix below sets the hit rate for *standard clause* detection at 80%, for *variation* detection at 81% and for *custom text* detection at 100%.
 
 ###### Proximus Roaming Agreement
-|n = 33           |Predicted: YES   |Predicted: No  |
-|:---------------:|:---------------:|:-------------:|
-|Observation Yes  |TP = 19          |FN = 7         |
-|Observation No   |FP = 5           |TN = 2         |
+|n = 33           |stdClause|variation|customText| 
+|:---------------:|:-------:|:-------:|---------:| 
+|stdClause        |9        |1        |0         |
+|variation        |1        |17       |3         | 
+|customText       |0        |0        |3         |
 
-###### Orange Roaming Agreement
-|n = 30           |Predicted: YES   |Predicted: No  |
-|:---------------:|:---------------:|:-------------:|
-|Observation Yes  |TP = 13          |FN = 11         |
-|Observation No   |FP = 4           |TN = 2         |
-
-## Accuracy determination based on symbol comparison
-The second **accuracy analysis** involves establishing a comparison between the sub-articles populated in the output file with respect to the sub-articles existing in the input file containing the **Roaming Agreements**. For that purpose, the text comparison tool [Countwordsfree](https://countwordsfree.com/comparetexts) has been used manually copying sub-article by sub-article. For each sub-article is determined:
- 
-1.	Common percentage of words between compared sub-articles.
-2.	Difference percentage of words between compared sub-articles.
-3.	Common words between compared sub-articles.
-4.	Difference words between compared sub-articles.
-
-Considering that for each sub-article the characters that determine the differences have been analyzed, determining that they are mostly end-of-line characters, quotation marks, parentheses and brackets, the threshold of the common percentage of words is determined as the worst case, i.e., where a greater combination of these characters appears. From the threshold, the rest of the cases found with lower common percentage of words will be considered failures.
-
-|Roaming Agreement (PDF File)|Threshold |Sub-article above the threshold|Sub-article below the threshold|
-|:--------------------------:|:--------:|:-----------------------------:|:-----------------------------:|
-|Proximus RA                 |78.43     |51                             |21                             |
-|Orange RA                   |78.74     |70                             |14                             |
-
-Although the results should be improved in future updates of the project, they can be considered acceptable.
+The detailed results obtained for this experiment have been published in the scientific paper "A Natural Language Processing Approach for the
+Digitalization of Roaming Agreement" in the conference [ILCICT 2021](https://ilcict.lit.ly/en/). This manuscript also contains the results for another experiment based on an analysis conducted at symbol level using the text comparison tool [Countwordsfree](https://countwordsfree.com/comparetexts).
 
 In our next part (Part-3), we will start the discussion of our proposed design of the *Hyperledger Fabric Blockchain chaincode* to manage digitalization of the drafting and negotiation process of  of **Roaming Agreements** providing a transparent and auditable mechanism to capture all the interactions between the parties.
 
