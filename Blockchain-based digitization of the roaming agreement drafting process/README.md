@@ -65,7 +65,7 @@ The lifecycle of the **Roaming Agreement** negotiation process is presented as t
 
 The **conclusion** reached at this point lies in the fact that the process of drafting the **Roaming Agreement** is mostly very 'analog' with successive exchanges of information between the parties using traditional means such as email or regular mail. While other digital platforms also offers a digitized version of this process, yet these platforms lack the transparency and auditbility that **blockchain** solutions can provide. The digitalization of the drafting and negotiation process of  of **Roaming Agreements** using **blockchain** technology such as **Hyperledger Fabric Blockchain** can provide the transparency and auditability in capturing all the interactions between the parties. 
 
-In our next part (Part-2), we will start the discussion of our proposed use of *Natural Language Processing (NLP)* as an engine to digitize the legal text in the **Roaming Agreements** drafts and how to build a library that can map the different *variations*, *variables*, *custom texts*, and *standard clauses* in the **Roaming Agreement** articles.
+In our next part ([Part-2](https://medium.com/@sfl0r3nz05/nlp-engine-to-detect-variables-standard-clauses-variations-and-customized-texts-893ff9f903e5)), we will start the discussion of our proposed use of *Natural Language Processing (NLP)* as an engine to digitize the legal text in the **Roaming Agreements** drafts and how to build a library that can map the different *variations*, *variables*, *custom texts*, and *standard clauses* in the **Roaming Agreement** articles.
 
  ## References
 
