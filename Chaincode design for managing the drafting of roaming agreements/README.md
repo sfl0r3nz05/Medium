@@ -8,32 +8,25 @@ For a better understanding, the analysis of the chaincode will be divided into t
 
 From a design point of view the project chaincode is defined by methods and statuses, where the interactions on the methods allow the transition between each of the statuses. The chaincode for Roaming Agreement Negotiation consists of three states: (1) **Status for Roaming Agreement Negotiation**, (2) **Status for the Articles Negotiation** and (3) **Status for the Article Drafting**.
 
-The **Status for Roaming Agreement Negotiation** allows the negotiation to be conducted at the highest level, to determine when the roaming agreement will be reached. The **Status for the Articles Negotiation** . The **Status for the Article Drafting** .
+The **Status for Roaming Agreement Negotiation** allows the negotiation to be conducted at the highest level, to determine when the **Roaming Agreement** will be reached. The negotiation at the articles level is an intermediate stage to determine whether all the articles belonging to the **Roaming Agreement** have reached the status of accepted by both parties. However, the fact that all articles at a given time are in the accepted status by both Mobile Network Operators (MNOs) does not necessarily imply that the agreement is close to being reached, but it is possible that both entities intend to add a new article. For this purpose, the **Status for the Articles Negotiation** exits. Finally, at a lower level is the **Status for the Article Drafting**, whose purpose is to manage the stages through which the *drafting* of the article may pass until it is finally accepted by both parties.
 
-
-La integración entre los estados ...
-
-La siguiente Tabla establece el conjunto de métodos diseñados que forman parte del chaincode. Además de la breve descripción de cada uno, la columna de la derecha enlaza con el diagrama de secuencias y diagrama de clases de cada uno de estos métodos.
+As mentioned, the transition between status is due to interaction using methods. The following Table defines the set of designed methods that are part of the chaincode.
 
 |Method                     |Description           |
 |:-------------------------:|----------------------|
 |addOrg                     |This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain network to be registered prior to negotiation for the drafting of a Roaming Agreement with another MNO.|
 |proposeAgreementInitiation |A registered organization is enabled to draft a Roaming Agreement. |
-|acceptAgreementInitiation  |For the roaming agreement drafting to be valid, the other MNO must confirm it. |
-|proposeAddArticle          |The drafting of the Roaming Agreement involves to add article by article. |
-|proposeUpdateArticle       |The drafting of the Roaming Agreement involves to update articles. |
-|proposeDeleteArticle       |The drafting of the Roaming Agreement involves to delete articles. |
-|acceptProposedChanges      |The changes proposed in Proposal for add article, Proposal for update article and Proposal for delete article must be accepted or refused. |
-|proposeReachAgreement      |The changes proposed in Proposal for add article, Proposal for update article and Proposal for delete article must be accepted or refused. |
-|acceptReachAgreement       |The changes proposed in Proposal of Agreement Achieved must be accepted or refused.|
-|querySingleArticle         |Query a single article. |
-|queryAllArticles           |Query all articles added to the negotiation process. |
+|acceptAgreementInitiation  |For the roaming agreement drafting to be valid,it must be confirmed by both MNOs. |
+|proposeAddArticle          |The drafting of the Roaming Agreement involves adding article by article. This method proposes adding a new article. |
+|proposeUpdateArticle       |The drafting of the Roaming Agreement involves updating existing articles. This method allow to update a previously proposed article. |
+|proposeDeleteArticle       |The drafting of the Roaming Agreement involves deletion existing articles.  This method allow to delete a previously proposed article. |
+|acceptProposedChanges      |This method is used to accept a proposed change, which may be to add, update or delete a previously proposed article. |
+|proposeReachAgreement      |Once all agreed items have been accepted any of the participating MNOs can apply to reach agreement using this method. |
+|acceptReachAgreement       |The changes proposed in Proposal of Agreement Achieved can be accepted through this method.|
+|querySingleArticle         |This merhod allow to query a single article. |
+|queryAllArticles           |This merhod allow to query all articles added to the negotiation process. |
 
-A continuación la forma en que cada uno de los métodos actúa sobre los estados del acuerdo de itinerancia.
-
-Aunque todos los métodos retornan al menos un error como parte de la gestión de errores, para garantizar la trazabilidad de todas las interacciones que suceden desde la parte off-chain con el contrato inteligente, la mayoría de los métodos emiten eventos que proporcionan información relavante para la trazabilidad como pueden ser la o las organizaciones que intervienen, la estampa de tiempo en el que fue emitido y el nombre del evento.
-
-Finally, the following table relates Methods and Events to emit.
+Although all methods return at least one error as part of error handling, to ensure traceability of all interactions that happen from the off-chain side with the smart contract, most methods emit events that provide traceability-relevant information such as the organization(s) involved, the timestamp at which it was emitted, and the name of the event. Next, the following Table relates Methods and Events to emit.
 
 |Method                     |Event                   |
 |:-------------------------:|:----------------------:|
@@ -49,4 +42,4 @@ Finally, the following table relates Methods and Events to emit.
 |querySingleArticle         |-                       |
 |queryAllArticles           |-                       |
 
-La parte número 4 de esta serie de 6 analizará los criterios de implementación y despliegue del Chaincode, para de esta forma completar el elemento principal del proyecto y enfocarnos las dos últimas partes complementarias, es decir el backend para gestionar la parte off-chain y el frontend para llevar a cabo interacciones desde un entornos user friendly.
+**Part 4** of this series of 6 will analyze the *Chaincode implementation and deployment criteria*, to complete the main element of the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements) and focus on the last two complementary parts, i.e. the *backend* to manage the off-chain part and the *frontend* to carry out interactions from a user friendly environment.
