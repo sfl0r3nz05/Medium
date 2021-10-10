@@ -21,7 +21,7 @@ As mentioned, the transition between status is due to interaction using methods.
 |proposeUpdateArticle       |The drafting of the Roaming Agreement involves updating existing articles. This method allow to update a previously proposed article. |
 |proposeDeleteArticle       |The drafting of the Roaming Agreement involves deletion existing articles.  This method allow to delete a previously proposed article. |
 |acceptProposedChanges      |This method is used to accept a proposed change, which may be to add, update or delete a previously proposed article. |
-|proposeReachAgreement      |Once all agreed items have been accepted any of the participating MNOs can apply to reach agreement using this method. |
+|proposeReachAgreement      |Once all drafted articles have been accepted any of the participating MNOs can apply to reach agreement using this method. |
 |acceptReachAgreement       |The changes proposed in Proposal of Agreement Achieved can be accepted through this method.|
 |querySingleArticle         |This merhod allow to query a single article. |
 |queryAllArticles           |This merhod allow to query all articles added to the negotiation process. |
