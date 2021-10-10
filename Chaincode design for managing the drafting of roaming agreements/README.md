@@ -14,8 +14,8 @@ La integración entre los estados ...
 
 La siguiente Tabla establece el conjunto de métodos diseñados que forman parte del chaincode. Además de la breve descripción de cada uno, la columna de la derecha enlaza con el diagrama de secuencias y diagrama de clases de cada uno de estos métodos.
 
-    |Method|Description||
-    |:-:|:-:|:-:|
+    |Method|Description|Method details|
+    |:----:|:---------:|:------------:|
     |addOrg|This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain network to be registered prior to negotiation for the drafting of a Roaming Agreement with another MNO.||
     |proposeAgreementInitiation|A registered organization is enabled to draft a Roaming Agreement.||
     |acceptAgreementInitiation |For the roaming agreement drafting to be valid, the other MNO must confirm it.||
