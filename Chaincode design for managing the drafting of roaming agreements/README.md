@@ -14,7 +14,19 @@ La integración entre los estados ...
 
 La siguiente Tabla establece el conjunto de métodos diseñados que forman parte del chaincode. Además de la breve descripción de cada uno, la columna de la derecha enlaza con el diagrama de secuencias y diagrama de clases de cada uno de estos métodos.
 
-TABLA
+    |Method|Description||
+    |:-:|:-:|:-:|
+    |addOrg|This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain network to be registered prior to negotiation for the drafting of a Roaming Agreement with another MNO.||
+    |proposeAgreementInitiation|A registered organization is enabled to draft a Roaming Agreement.||
+    |acceptAgreementInitiation |For the roaming agreement drafting to be valid, the other MNO must confirm it.||
+    |proposeAddArticle|||
+    |proposeUpdateArticle|||
+    |proposeDeleteArticle|||
+    |acceptProposedChanges|||
+    |proposeReachAgreement|||
+    |acceptReachAgreement|||
+    |querySingleArticle|||
+    |queryAllArticles|||
 
 A continuación la forma en que cada uno de los métodos actúa sobre los estados del acuerdo de itinerancia.
 
@@ -35,3 +47,5 @@ Finally, the following table relates Methods, Events to emit and the three types
 |acceptReachAgreement       |confirmation_accepted_ra|acepted_ra_confirmation     |end                            |-                             |
 |querySingleArticle         |-                       |-                           |-                              |-                             |
 |queryAllArticles           |-                       |-                           |-                              |-                             |
+
+La parte número 4 de esta serie de 6 analizará los criterios de implementación y despliegue del Chaincode, para de esta forma completar el elemento principal del proyecto y enfocarnos las dos últimas partes complementarias, es decir el backend para gestionar la parte off-chain y el frontend para llevar a cabo interacciones desde un entornos user friendly.
