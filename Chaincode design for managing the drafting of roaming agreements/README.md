@@ -16,17 +16,17 @@ La siguiente Tabla establece el conjunto de métodos diseñados que forman parte
 
 |Method                     |Description           |Method details              |
 |:-------------------------:|----------------------|:--------------------------:|
-|addOrg                     |This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain network to be registered prior to negotiation for the drafting of a Roaming Agreement with another MNO.             |-                           |
-|proposeAgreementInitiation |started_ra              |started_ra                  |
-|acceptAgreementInitiation  |confirmation_ra_started |started_ra_confirmation     |
-|proposeAddArticle          |proposed_add_article    |ra_negotiating              |
-|proposeUpdateArticle       |proposed_update_article |ra_negotiating              |
-|proposeDeleteArticle       |proposed_delete_article |ra_negotiating              |
-|acceptProposedChanges      |accept_proposed_changes |ra_negotiating              |
-|proposeReachAgreement      |proposal_accepted_ra    |accepted_ra                 |
-|acceptReachAgreement       |confirmation_accepted_ra|acepted_ra_confirmation     |
-|querySingleArticle         |-                       |-                           |
-|queryAllArticles           |-                       |-                           |
+|addOrg                     |This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain network to be registered prior to negotiation for the drafting of a Roaming Agreement with another MNO.| |
+|proposeAgreementInitiation |A registered organization is enabled to draft a Roaming Agreement. | |
+|acceptAgreementInitiation  |confirmation_ra_started | |
+|proposeAddArticle          |proposed_add_article    | |
+|proposeUpdateArticle       |proposed_update_article | |
+|proposeDeleteArticle       |proposed_delete_article | |
+|acceptProposedChanges      |accept_proposed_changes | |
+|proposeReachAgreement      |proposal_accepted_ra    | |
+|acceptReachAgreement       |confirmation_accepted_ra| |
+|querySingleArticle         |-                       | |
+|queryAllArticles           |-                       | |
 
 A continuación la forma en que cada uno de los métodos actúa sobre los estados del acuerdo de itinerancia.
 
