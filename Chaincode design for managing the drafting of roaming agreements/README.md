@@ -12,12 +12,12 @@ The **Statuses for Roaming Agreement Negotiation** allows the negotiation to be 
 
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Roaming_Agreement_State_v03.drawio.png">
 
-The negotiation at the articles level is an intermediate stage to determine whether all the articles belonging to the **Roaming Agreement** have reached the status of accepted by both parties.
+The negotiation at the articles level is an intermediate stage to determine whether all the articles belonging to the **Roaming Agreement** have reached the status of accepted by both parties. Thus, as shown in the figure below, belonging to the **Status for the Article Drafting** stage, once an article is added, it goes through a transition of proposed changes until finally the article drafting is accepted.
 
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Article_Drafting_State_v03.drawio.png">
 
 
-However, the fact that all articles at a given time are in the accepted status by both Mobile Network Operators (MNOs) does not necessarily imply that the agreement is close to being reached, but it is possible that both entities intend to add a new article. For this purpose, the **Status for the Articles Negotiation** exits. Finally, at a lower level is the **Status for the Article Drafting**, whose purpose is to manage the stages through which the *drafting* of the article may pass until it is finally accepted by both parties.
+However, the fact that all articles at a given time are in the accepted status by both MNOs does not necessarily imply that the **Roaming Agreement** is close to being reached, but it is possible that both entities intend to add a new article despite that all currently added articles are in an accepted status. For this purpose, the **Status for the Articles Negotiation** exits. As shown in the following figure, the function of this stage is to control the status of all articles added. For which, it establishes a transient status that determines that all added articles are accepted. On the one hand, this stage allows to continue the articles drafting process if a new article is proposed and on the other hand, this stage allows to move towards the achivement of the **Roaming Agreement**.
 
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Article_Negotiation_State_v03.drawio.png">
 
