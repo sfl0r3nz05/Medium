@@ -31,25 +31,24 @@ As mentioned, the transition between status is due to interaction through action
 |proposeAddArticle          |The drafting of the Roaming Agreement involves the proposed addition of the articles. |
 |proposeUpdateArticle       |The proposal for added articles can be modified using this method. |
 |acceptProposedChanges      |The changes made to an article added or a proposed modification must be confirmed prior to the article being considered as accepted. |
-|proposeReachAgreement      |Once all drafted articles have been accepted any of the participating MNOs can apply to reach agreement using this method. |
-|acceptReachAgreement       |The changes proposed in Proposal of Agreement Achieved can be accepted through this method.|
-|querySingleArticle         |This merhod allow to query a single article. |
-|queryAllArticles           |This merhod allow to query all articles added to the negotiation process. |
+|proposeReachAgreement      |Once all drafted articles have been accepted any of the participating MNOs can apply to reach the **Roaming Agreement** using this method. |
+|acceptReachAgreement       |To reach the roaming agreement the proposed agreement must be accepted from this method.|
+|queryMNO |This method allows to retrieve the information associated to a MNO. |
+|queryRAID |This method allows to retrieve information of the Roaming Agreement. |
+|querySingleArticle         |This method allows to query a single article. |
+|queryAllArticles           |This method allows to query all articles added to the negotiation process. |
 
-Although all methods return at least one error as part of error handling, to ensure traceability of all interactions that happen from the off-chain side with the smart contract, most methods emit events that provide traceability-relevant information such as the organization(s) involved, the timestamp at which it was emitted, and the name of the event. Next, the following Table relates Methods and Events to emit.
+To ensure traceability of all interactions that happen from the off-chain side with the chaincode, most methods emit events that provide traceability-relevant information such as the organization(s) involved, the timestamp at which it was emitted, and the name of the event. Next, the following Table relates Methods and Events to emit.
 
-|Method                     |Event                   |
+|Method                     |Event name              |
 |:-------------------------:|:----------------------:|
 |addOrg                     |created_org             |
 |proposeAgreementInitiation |started_ra              |
 |acceptAgreementInitiation  |confirmation_ra_started |
 |proposeAddArticle          |proposed_add_article    |
 |proposeUpdateArticle       |proposed_update_article |
-|proposeDeleteArticle       |proposed_delete_article |
 |acceptProposedChanges      |accept_proposed_changes |
 |proposeReachAgreement      |proposal_accepted_ra    |
 |acceptReachAgreement       |confirmation_accepted_ra|
-|querySingleArticle         |-                       |
-|queryAllArticles           |-                       |
 
 **Part 4** of this series of 6 will analyze the *Chaincode implementation and deployment criteria*, to complete the main element of the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements) and focus on the last two complementary parts, i.e. the *backend* to manage the off-chain part and the *frontend* to carry out interactions from a user friendly environment.
