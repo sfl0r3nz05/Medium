@@ -26,12 +26,11 @@ As mentioned, the transition between status is due to interaction through action
 |Method                     |Description           |
 |:-------------------------:|----------------------|
 |addOrg                     |This method is part of the initial status and allows you to register any MNO that is part of the Hyperledger Fabric Blockchain network prior to draft the **Roaming Agreement** with another MNO.|
-|proposeAgreementInitiation |A registered organization is enabled to draft a Roaming Agreement. |
-|acceptAgreementInitiation  |For the roaming agreement drafting to be valid,it must be confirmed by both MNOs. |
-|proposeAddArticle          |The drafting of the Roaming Agreement involves adding article by article. This method proposes adding a new article. |
-|proposeUpdateArticle       |The drafting of the Roaming Agreement involves updating existing articles. This method allow to update a previously proposed article. |
-|proposeDeleteArticle       |The drafting of the Roaming Agreement involves deletion existing articles.  This method allow to delete a previously proposed article. |
-|acceptProposedChanges      |This method is used to accept a proposed change, which may be to add, update or delete a previously proposed article. |
+|proposeAgreementInitiation |The proposal to initiate the drafting of the Roaming Agreement is carried out by one of the two participating MNOs through this method. |
+|acceptAgreementInitiation  |As mentioned, the proposed wording of the iteration agreement must be confirmed by the MNO that did not propose the Roaming Agreement initiation, for which the following method is used. |
+|proposeAddArticle          |The drafting of the Roaming Agreement involves the proposed addition of the articles. |
+|proposeUpdateArticle       |The proposal for added articles can be modified using this method. |
+|acceptProposedChanges      |The changes made to an article added or a proposed modification must be confirmed prior to the article being considered as accepted. |
 |proposeReachAgreement      |Once all drafted articles have been accepted any of the participating MNOs can apply to reach agreement using this method. |
 |acceptReachAgreement       |The changes proposed in Proposal of Agreement Achieved can be accepted through this method.|
 |querySingleArticle         |This merhod allow to query a single article. |
