@@ -21,7 +21,7 @@ However, the fact that all articles at a given time are in the accepted status b
 
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Article_Negotiation_State_v03.drawio.png">
 
-As mentioned, the transition between status is due to interaction using methods. The following Table defines the set of designed methods that are part of the chaincode.
+As mentioned, the transition between status is due to interaction through actions. From a programming point of view the actions are performed through chaincode methods, which are invoked or queried from the off-chain side. The following Table defines the set of designed methods that are part of the chaincode.
 
 |Method                     |Description           |
 |:-------------------------:|----------------------|
