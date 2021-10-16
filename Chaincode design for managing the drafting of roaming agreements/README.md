@@ -25,7 +25,7 @@ As mentioned, the transition between status is due to interaction through action
 
 |Method                     |Description           |
 |:-------------------------:|----------------------|
-|addOrg                     |This mechanism allows any MNO that is part of the Hyperledger Fabric Blockchain network to be registered prior to negotiation for the drafting of a Roaming Agreement with another MNO.|
+|addOrg                     |This method is part of the initial status and allows you to register any MNO that is part of the Hyperledger Fabric Blockchain network prior to draft the **Roaming Agreement** with another MNO.|
 |proposeAgreementInitiation |A registered organization is enabled to draft a Roaming Agreement. |
 |acceptAgreementInitiation  |For the roaming agreement drafting to be valid,it must be confirmed by both MNOs. |
 |proposeAddArticle          |The drafting of the Roaming Agreement involves adding article by article. This method proposes adding a new article. |
