@@ -8,35 +8,35 @@ For a better understanding, the analysis of the chaincode will be divided into t
 
 From a design point of view, the project chaincode is defined by actions and statuses, where interactions through actions allow the transition between each of the statuses. The statuses allow establishing a transition from the enabling of a **Mobile Network Operator (MNO)** until it reaches the *Roaming Agreement* with another enabled **MNO**. Therefore, it is necessary to put the focus on the statuses that govern the chaincode. Thus, the chaincode for Roaming Agreement Negotiation consists of three stages: (1) **Statuses for Roaming Agreement Negotiation**, (2) **Statuses for the Articles Negotiation** and (3) **Statuses for the Article Drafting**.
 
-The **Statuses for Roaming Agreement Negotiation** allows the negotiation to be conducted at the highest level, to determine when the **Roaming Agreement** will be reached. Without being too rigorous with each of the transitions that take place, the following figure shows each of the states that make up this stage. Thus, in the initial status, the MNOs must be enrolled, which enables either of the two MNOs participating in the negotiation to make a proposal to initiate the *Roaming Agreement* drafting process. Once the initiation of the negotiation is confirmed, the negotiation of the drafting of articles and sub-articles proceeds, where the other stages are involved, ending with a proposal and confirmation of acceptance of the *Roaming Agreement*.
+The **Statuses for Roaming Agreement Negotiation** allows the negotiation to be conducted at the highest level, to determine when the **Roaming Agreement** will be reached. Without being too rigorous with each of the transitions that take place, the following figure shows each of the states that make up this stage. Thus, in the initial status, the MNOs must be enrolled, which enables either of the two MNOs participating in the negotiation to propose to initiate the *Roaming Agreement* drafting process. Once the initiation of the negotiation is confirmed, the negotiation of the drafting of articles and sub-articles proceeds, where the other stages are involved, ending with a proposal and confirmation of acceptance of the *Roaming Agreement*.
 
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Roaming_Agreement_State_v03.drawio.png">
 
-The negotiation at the articles level is an intermediate stage to determine whether all the articles belonging to the **Roaming Agreement** have reached the status of accepted by both parties. Thus, as shown in the figure below, belonging to the **Status for the Article Drafting** stage, once an article is added, it goes through a transition of proposed changes until finally the article drafting is accepted.
+The negotiation at the articles level is an intermediate stage to determine whether all the articles belonging to the **Roaming Agreement** have reached the status of being accepted by both parties. Thus, as shown in the figure below, belonging to the **Status for the Article Drafting** stage, once an article is added, it goes through a transition of proposed changes until finally the article drafting is accepted.
 
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Article_Drafting_State_v03.drawio.png">
 
 
-However, the fact that all articles at a given time are in the accepted status by both MNOs does not necessarily imply that the **Roaming Agreement** is close to being reached, but it is possible that both entities intend to add a new article despite that all currently added articles are in an accepted status. For this purpose, the **Status for the Articles Negotiation** exits. As shown in the following figure, the function of this stage is to control the status of all articles added. For which, it establishes a transient status that determines that all added articles are accepted. On the one hand, this stage allows to continue the articles drafting process if a new article is proposed and on the other hand, this stage allows to move towards the achivement of the **Roaming Agreement**.
+However, the fact that all articles at a given time are in the accepted status by both MNOs does not necessarily imply that the **Roaming Agreement** is close to being reached, but both entities may intend to add a new article despite that all currently added articles are in an accepted status. For this purpose, the **Status for the Articles Negotiation** exits. As shown in the following figure, the function of this stage is to control the status of all articles added. For this, it establishes a transient status that determines that all added articles are accepted. On the one hand, this stage allows to continuing the article drafting process if a new article is proposed and on the other hand, this stage allows to move towards the achievement of the **Roaming Agreement**.
 
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Article_Negotiation_State_v03.drawio.png">
 
-As mentioned, the transition between status is due to interaction through actions. From a programming point of view the actions are performed through chaincode methods, which are invoked or queried from the off-chain side. The following Table defines the set of designed methods that are part of the chaincode.
+As mentioned, the transition between states is due to interaction through actions. From a programming point of view, the actions are performed through chaincode methods, which are invoked or queried from the off-chain side. The following Table defines the set of design methods that are part of the chaincode.
 
 |Method                     |Description           |
 |:-------------------------:|----------------------|
-|addOrg                     |This method is part of the initial status and allows you to register any MNO that is part of the Hyperledger Fabric Blockchain network prior to draft the **Roaming Agreement** with another MNO.|
+|addOrg                     |This method is part of the initial status and allows you to register any MNO that is part of the Hyperledger Fabric Blockchain network before drafting the **Roaming Agreement** with another MNO.|
 |proposeAgreementInitiation |The proposal to initiate the drafting of the Roaming Agreement is carried out by one of the two participating MNOs through this method. |
 |acceptAgreementInitiation  |As mentioned, the proposed wording of the iteration agreement must be confirmed by the MNO that did not propose the Roaming Agreement initiation, for which the following method is used. |
 |proposeAddArticle          |The drafting of the Roaming Agreement involves the proposed addition of the articles. |
 |proposeUpdateArticle       |The proposal for added articles can be modified using this method. |
-|acceptProposedChanges      |The changes made to an article added or a proposed modification must be confirmed prior to the article being considered as accepted. |
+|acceptProposedChanges      |The changes made to an article added or a proposed modification must be confirmed before the article being considered as accepted. |
 |proposeReachAgreement      |Once all drafted articles have been accepted any of the participating MNOs can apply to reach the **Roaming Agreement** using this method. |
 |acceptReachAgreement       |To reach the roaming agreement the proposed agreement must be accepted from this method.|
-|queryMNO |This method allows to retrieve the information associated to a MNO. |
-|queryRAID |This method allows to retrieve information of the Roaming Agreement. |
-|querySingleArticle         |This method allows to query a single article. |
-|queryAllArticles           |This method allows to query all articles added to the negotiation process. |
+|queryMNO |This method allows retrieving the information associated with an MNO. |
+|queryRAID |This method allows retrieving information of the Roaming Agreement. |
+|querySingleArticle         |This method allows querying a single article. |
+|queryAllArticles           |This method allows querying all articles added to the negotiation process. |
 
 To ensure traceability of all interactions that happen from the off-chain side with the chaincode, most methods emit events that provide traceability-relevant information such as the organization(s) involved, the timestamp at which it was emitted, and the name of the event. Next, the following Table relates Methods and Events to emit.
 
@@ -51,4 +51,4 @@ To ensure traceability of all interactions that happen from the off-chain side w
 |proposeReachAgreement      |proposal_accepted_ra    |
 |acceptReachAgreement       |confirmation_accepted_ra|
 
-**Part 4** of this series of 6 will analyze the *Chaincode implementation and deployment criteria*, to complete the main element of the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements) and focus on the last two complementary parts, i.e. the *backend* to manage the off-chain part and the *frontend* to carry out interactions from a user friendly environment.
+**Part 4** of this series of 6 will analyze the *Chaincode implementation and deployment criteria*, to complete the main element of the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements) and focus on the last two complementary parts, i.e. the *backend* to manage the off-chain part and the *frontend* to carry out interactions from a user-friendly environment.
