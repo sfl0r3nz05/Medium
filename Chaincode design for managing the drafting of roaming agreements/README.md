@@ -12,7 +12,14 @@ The **Statuses for Roaming Agreement Negotiation** allows the negotiation to be 
 
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Roaming_Agreement_State_v03.drawio.png">
 
-The negotiation at the articles level is an intermediate stage to determine whether all the articles belonging to the **Roaming Agreement** have reached the status of accepted by both parties.However, the fact that all articles at a given time are in the accepted status by both Mobile Network Operators (MNOs) does not necessarily imply that the agreement is close to being reached, but it is possible that both entities intend to add a new article. For this purpose, the **Status for the Articles Negotiation** exits. Finally, at a lower level is the **Status for the Article Drafting**, whose purpose is to manage the stages through which the *drafting* of the article may pass until it is finally accepted by both parties.
+The negotiation at the articles level is an intermediate stage to determine whether all the articles belonging to the **Roaming Agreement** have reached the status of accepted by both parties.
+
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Article_Drafting_State_v03.drawio.png">
+
+
+However, the fact that all articles at a given time are in the accepted status by both Mobile Network Operators (MNOs) does not necessarily imply that the agreement is close to being reached, but it is possible that both entities intend to add a new article. For this purpose, the **Status for the Articles Negotiation** exits. Finally, at a lower level is the **Status for the Article Drafting**, whose purpose is to manage the stages through which the *drafting* of the article may pass until it is finally accepted by both parties.
+
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Article_Negotiation_State_v03.drawio.png">
 
 As mentioned, the transition between status is due to interaction using methods. The following Table defines the set of designed methods that are part of the chaincode.
 
