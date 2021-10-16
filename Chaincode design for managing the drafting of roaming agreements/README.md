@@ -38,7 +38,7 @@ As mentioned, the transition between states is due to interaction through action
 |querySingleArticle         |This method allows querying a single article. |
 |queryAllArticles           |This method allows querying all articles added to the negotiation process. |
 
-To ensure traceability of all interactions that happen from the off-chain side with the chaincode, most methods emit events that provide traceability-relevant information such as the organization(s) involved, the timestamp at which it was emitted, and the name of the event. Next, the following Table relates Methods and Events to emit.
+To ensure traceability of all interactions that happen from the off-chain side with the chaincode, most methods emit events that provide traceability-relevant information such as the organization(s) involved, the timestamp at which it was emitted, and the name of the event. Next, the following Table relates Methods and the Events emitted by them. It should be noted that only the methods that invoke transactions are those that emit events.
 
 |Method                     |Event name              |
 |:-------------------------:|:----------------------:|
