@@ -6,9 +6,9 @@ The following is **Part-3** of a **6-Part** series associated with the project [
 
 For a better understanding, the analysis of the chaincode will be divided into two parts. On the one hand, this part (**Part-3**) focuses on the details of the chaincode design. On the other hand, **Part-4** of this series will focus on the *implementation*, *deployment* and *testing* of the chaincode.
 
-From a design point of view, the project chaincode is defined by actions and statuses, where interactions through actions allow the transition between each of the statuses. The statuses allow establishing a transition from the enabling of a **Mobile Network Operator (MNO)** until it reaches the *Roaming Agreement* with another enabled **MNO**. Therefore, it is necessary to put the focus on the statuses that govern the chaincode. Thus, the chaincode for Roaming Agreement Negotiation consists of three stages: (1) **Statuses for Roaming Agreement Negotiation**, (2) **Statuses for the Articles Negotiation** and (3) **Statuses for the Article Drafting**.
+From a design point of view, the project chaincode is defined by actions and statuses, where interactions through actions allow the transition between each of the statuses. The statuses allow establishing a transition from the enabling of a **Mobile Network Operator (MNO)** until it reaches the **Roaming Agreement** with another enabled **MNO**. Therefore, it is necessary to put the focus on the statuses that govern the chaincode. Thus, the chaincode for **Roaming Agreement** Negotiation consists of three stages: (1) **Statuses for Roaming Agreement Negotiation**, (2) **Statuses for the Articles Negotiation** and (3) **Statuses for the Article Drafting**.
 
-The **Statuses for Roaming Agreement Negotiation** allows the negotiation to be conducted at the highest level, to determine when the **Roaming Agreement** will be reached. Without being too rigorous with each of the transitions that take place, the following figure shows each of the states that make up this stage. Thus, in the initial status, the MNOs must be enrolled, which enables either of the two MNOs participating in the negotiation to propose to initiate the *Roaming Agreement* drafting process. Once the initiation of the negotiation is confirmed, the negotiation of the drafting of articles and sub-articles proceeds, where the other stages are involved, ending with a proposal and confirmation of acceptance of the *Roaming Agreement*.
+The **Statuses for Roaming Agreement Negotiation** allows the negotiation to be conducted at the highest level, to determine when the **Roaming Agreement** will be reached. Without being too rigorous with each of the transitions that take place, the following figure shows each of the states that make up this stage. Thus, in the initial status, the MNOs must be enrolled, which enables either of the two MNOs participating in the negotiation to propose to initiate the **Roaming Agreement** drafting process. Once the initiation of the negotiation is confirmed, the negotiation of the drafting of articles and sub-articles proceeds, where the other stages are involved, ending with a proposal and confirmation of acceptance of the **Roaming Agreement**.
 
 <img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Roaming_Agreement_State_v03.drawio.png">
 
@@ -26,15 +26,15 @@ As mentioned, the transition between states is due to interaction through action
 |Method                     |Description           |
 |:-------------------------:|----------------------|
 |addOrg                     |This method is part of the initial status and allows you to register any MNO that is part of the Hyperledger Fabric Blockchain network before drafting the **Roaming Agreement** with another MNO.|
-|proposeAgreementInitiation |The proposal to initiate the drafting of the Roaming Agreement is carried out by one of the two participating MNOs through this method. |
-|acceptAgreementInitiation  |As mentioned, the proposed wording of the iteration agreement must be confirmed by the MNO that did not propose the Roaming Agreement initiation, for which the following method is used. |
-|proposeAddArticle          |The drafting of the Roaming Agreement involves the proposed addition of the articles. |
+|proposeAgreementInitiation |The proposal to initiate the drafting of the **Roaming Agreement** is carried out by one of the two participating MNOs through this method. |
+|acceptAgreementInitiation  |As mentioned, the proposed wording of the iteration agreement must be confirmed by the MNO that did not propose the **Roaming Agreement** initiation, for which the following method is used. |
+|proposeAddArticle          |The drafting of the **Roaming Agreement** involves the proposed addition of the articles. |
 |proposeUpdateArticle       |The proposal for added articles can be modified using this method. |
 |acceptProposedChanges      |The changes made to an article added or a proposed modification must be confirmed before the article being considered as accepted. |
 |proposeReachAgreement      |Once all drafted articles have been accepted any of the participating MNOs can apply to reach the **Roaming Agreement** using this method. |
-|acceptReachAgreement       |To reach the roaming agreement the proposed agreement must be accepted from this method.|
+|acceptReachAgreement       |To reach the **Roaming Agreement** the proposed agreement must be accepted from this method.|
 |queryMNO |This method allows retrieving the information associated with an MNO. |
-|queryRAID |This method allows retrieving information of the Roaming Agreement. |
+|queryRAID |This method allows retrieving information of the **Roaming Agreement**. |
 |querySingleArticle         |This method allows querying a single article. |
 |queryAllArticles           |This method allows querying all articles added to the negotiation process. |
 
