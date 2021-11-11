@@ -29,4 +29,4 @@ As mentioned, the transition between states is due to interaction between the tw
 
 ## Golang's challenges
 
-1. Working with pointers on nested structures [example](https://play.golang.org/p/UoeBH_2EZdb)
+1. Working with pointers on nested structures [example](https://play.golang.org/p/UoeBH_2EZdb).
