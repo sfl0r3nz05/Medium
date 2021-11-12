@@ -135,7 +135,10 @@ Once the main implementation criteria have been analyzed, the getting started ne
 
 ## Implementation's challenges
 
-1. Working with pointers on nested structures [example](https://play.golang.org/p/UoeBH_2EZdb).
+Finally, in this topic we consider points of interest throughout the chaincode implementation process that constituted challenges:
+
+1. Working with pointers on nested structures: Our chaincode defines numerous nested structures, which must be initialized and updated constantly throughout the chaincode's life cycle. To avoid receiving a copy of a value receiver that does not update the structure, a pointer to the memory that contains the structure must be used. For a better understanding of how to work with nested structures using pointers we have included the following [example](https://play.golang.org/p/UoeBH_2EZdb) on a golang test runtime.
+2. Gestionando identificadores únicos.
 
 ## Interest links:
 - The designs can be modified using the [App Diagrams Tool](https://app.diagrams.net/). 
