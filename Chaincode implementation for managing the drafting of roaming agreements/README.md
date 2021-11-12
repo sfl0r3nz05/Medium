@@ -41,8 +41,10 @@ In this way, a registered MNO enables the drafting of an **Roaming Agreement**. 
 1. Generation of the unique identifier for the list of Articles: `articlesId`
 2. Generation of the unique identifier for the roaming agreement: `RAID`.
 3. The `started_ra` event is emitted.
-4. The Status for the Roaming Agreement Negotiation is set as `started_ra`.
+4. The Status for the Roaming Agreement Negotiation is set as `started_ra` and contained as part of the emitted event.
 5. The Status for the Articles Negotiation is set as `init`.
+
+The main conclusion we can reach is that each method involves the verification, update or generation of states, which are stored as parts of the data structures established for the chaincodes and traced thanks to the events emitted from each of the methods.
 
 Table 1 summarizes the details of the implementation of the `proposeAgreementInitiation` method:
 |           Method           |   Event    | Status for Roaming Agreement | Status for Articles Negotiation | Status for Article Drafting |
@@ -51,12 +53,82 @@ Table 1 summarizes the details of the implementation of the `proposeAgreementIni
 
 ## How methods drive state change
 
+Considering that the execution of each of the methods allows to verify, update or generate states, Table 2 recapitulates the types of states defined in Part-3, associated to the application level. Thus, Figure 3 allows relating methods and states according to the different application levels.
+
+|                  Status                  |    Application level    |
+| :--------------------------------------: | :---------------------: |
+| Status for Roaming Agreement Negotiation | Roaming Agreement Level |
+|   Status for the Articles Negotiation    |     Articles Level      |
+|     Status for the Article Drafting      |      Article Level      |
+
 <img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/Status_Integration.png">
 
 ## Getting Started to deploy the chaincode
+Once the main implementation criteria have been analyzed, the getting started necessary to modify the chaincode is documented:
+
 1. Download Golang Version: `wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz`.
 2. To verify the tarball checksum it can be used the sha256sum command: `sha256sum go1.16.7.linux-amd64.tar.gz`.
 3. Copy Golang bynary into executable folder: `sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.16.7.linux-amd64.tar.gz`.
+4. Define the GOPATH environmental variable:
+    ```
+    export GOPATH=$HOME/go
+    export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+    ```
+5. Edit the profile file: Edit the `profile` file
+    ```
+    sudo nano $HOME/.profile
+    ```
+6. Add next line into `profile` file
+    ```
+    export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+    ```
+7. Enabling changes in the `profile` file
+    ```
+    source ~/.profile
+    ```
+8. Verify Golang version
+    ```
+    go version
+    ```
+9. By default the workspace directory is set to $HOME/go
+    ```
+    mkdir ~/go
+    ```
+10. Inside the workspace create a new directory
+    ```
+    mkdir -p ~/go/src/chaincode
+    ```
+11. To edit changes directly on implementation folder of the respository must be created a Symbolic Link
+    ```
+    sudo ln -s $GOPATH/src/github.com/nlp-dlt/chaincode/implementation/* ~/go/src/chaincode
+    ```
+12. Enable go mod
+    ```
+    go mod init ~/go/src/name_of_the_project/chaincode
+    ```
+13. Install dependencies
+    ```
+    go get github.com/google/uuid
+    go get github.com/sirupsen/logrus
+    go get github.com/hyperledger/fabric-protos-go/peer
+    go get github.com/hyperledger/fabric-chaincode-go/shim
+    go get github.com/hyperledger/fabric-chaincode-go/pkg/cid
+    ```
+14. Build the changes
+    ```
+    go build
+    ```
+15. Building a vendor is necessary to import all the external dependencies needed for the basic functionality of the chaincode into a local vendor directory
+    If the chaincode does not run because of the vendor, it can be built from scratch:
+    ```
+    cd   ~/go/src/name_of_the_project/chaincode
+    dep  init
+    ```
+16. Also if it already exists, the missing packages can be imported using the update option:
+    ```
+    cd   ~/go/src/name_of_the_project/chaincode
+    dep  ensure -v
+    ```
 
 ## Implementation's challenges
 
