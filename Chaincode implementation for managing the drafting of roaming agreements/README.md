@@ -67,11 +67,17 @@ Considering that the execution of each of the methods allows to verify, update o
 Once the main implementation criteria have been analyzed, the getting started necessary to modify the chaincode is documented:
 
 1. Download Golang Version: 
-`wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz`.
+    ```
+    wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz`
+    ```
 2. To verify the tarball checksum it can be used the sha256sum command: 
-`sha256sum go1.16.7.linux-amd64.tar.gz`.
+    ```
+    sha256sum go1.16.7.linux-amd64.tar.gz`
+    ```
 3. Copy Golang bynary into executable folder: 
-    `sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.16.7.linux-amd64.tar.gz`.
+    ```
+    sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.16.7.linux-amd64.tar.gz`
+    ```
 4. Define the GOPATH environmental variable:
     ```
     export GOPATH=$HOME/go
@@ -138,7 +144,7 @@ Once the main implementation criteria have been analyzed, the getting started ne
 Finally, in this topic we consider points of interest throughout the chaincode implementation process that constituted challenges:
 
 1. Working with pointers on nested structures: Our chaincode defines numerous nested structures, which must be initialized and updated constantly throughout the chaincode's life cycle. To avoid receiving a copy of a value receiver that does not update the structure, a pointer to the memory that contains the structure must be used. For a better understanding of how to work with nested structures using pointers we have included the following [example](https://play.golang.org/p/UoeBH_2EZdb) on a golang test runtime.
-2. Gestionando identificadores únicos.
+2. Generating unique identifiers: The chaincode lifecycle contains two main unique identifiers: Roaming Agreement Idenfier (RAID) and Articles Identifier (articlesID). To ensure that the identifiers are unique and avoid collisions, the resource used has been to generate a uuid and then compute the sha256 from it, which will constitute the identifier. The functionalities used for this purpose are implemented within the Util Module.
 
 ## Interest links:
 - The designs can be modified using the [App Diagrams Tool](https://app.diagrams.net/). 
