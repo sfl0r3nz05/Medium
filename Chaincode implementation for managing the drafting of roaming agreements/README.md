@@ -28,11 +28,11 @@ Other relevant features defined chaincode implementation are:
     ERRORPutState                       = `Failed to store data into the ledger.  `
     ```
 ## Modules integration
-The integration between the different modules takes place in each of the methods defined for the chaincode. Considering that in **Part 3** each of the chaincode methods was defined, in the following we will focus on only one method in order to comprehend how the integration between the modules is. For example, the `proposeAgreementInitiation` method, which has been defined as *the proposal to initiate the drafting of the **Roaming Agreement** is carried out by one of the two participating MNOs through this method*, directly participates in the transition from the initial state to the `started_ra`.
+The integration between the different modules takes place in each of the methods defined for the HFB chaincode. Considering that in **Part 3** each of the chaincode methods were defined, we will now focus on a single method to analyze how the integration between modules takes place. The selected method is `proposeAgreementInitiation`, which has been defined in Part-3 as *the proposal to initiate the **Roaming Agreement** drafting by one of the two participating MNOs, causing the transition from the initial state to the `started_ra` as shown in the Figure 1:
 
 <img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/Roaming_Agreement_State_v03.drawio.png">
 
-## Métodos conducen al cambio de estado
+## How methods drive state change
 
 ## Getting Started to deploy the chaincode
 1. Download Golang Version: `wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz`.
@@ -42,3 +42,12 @@ The integration between the different modules takes place in each of the methods
 ## Implementation's challenges
 
 1. Working with pointers on nested structures [example](https://play.golang.org/p/UoeBH_2EZdb).
+
+## Interest links:
+- The designs can be modified using the [App Diagrams Tool](https://app.diagrams.net/). 
+- Drawio files can be found at:
+    - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/diagram_sequence_chaincode_v17.drawio)
+    - [Chaincode Class Diagram](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/class_diagram_chaincode_v17.drawio)
+    - [Status Diagram for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/Roaming_Agreement_State_v03.drawio)
+    - [Status Diagram for Article Negotiation](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/Article_Negotiation_State_v03.drawio)
+    - [Status Diagram for Article Drafting](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/Article_Drafting_State_v03.drawio)
