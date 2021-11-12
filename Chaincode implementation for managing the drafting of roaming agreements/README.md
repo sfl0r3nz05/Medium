@@ -51,7 +51,7 @@ Table 1 summarizes the details of the implementation of the `proposeAgreementIni
 
 ## How methods drive state change
 
-<img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/diagram_sequence_chaincode_v17.drawio.png">
+<img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/Status_Integration.png">
 
 ## Getting Started to deploy the chaincode
 1. Download Golang Version: `wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz`.
