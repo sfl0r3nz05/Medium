@@ -1,11 +1,9 @@
 # Chaincode implementation for managing the drafting of roaming agreements
-
 The following is **Part-4** of a **6-Part** series associated with the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), with the main objective of transforming the **Telecom Roaming Agreement's** drafting and negotiation process into a digitalized version based on the transparency promoted by *blockchain* technology. The other authors of this story are Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif.
 
 **Part 3** of the series analyzed the design of the Hyperledger Fabric Blockchain (HFB) chaincode as the main element of the project to manage on-chain all the interactions to represent the businesses processes related to the drafting and negotiation of the **Roaming Agreement**. In this way, the interactions through actions led to the transition between different states providing all the necessary traceability from the time an Mobile Network Operator (MNO) registers on the HFB platform until an agreement is reached between two MNOs. This **Part-4** continues with the chaincode analysis, however, now from an implementation perspective.
 
 ## The chaincode modules
-
 The chaincode implementation consists of 6 modules which are described below:
 
 1. [Proxy](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/proxy.go): This module receives the interactions from the off-chain side and routes them to the different points within the chaincode.
@@ -27,6 +25,7 @@ Other relevant features defined chaincode implementation are:
     ERRORParsingData                    = `Error parsing data `
     ERRORPutState                       = `Failed to store data into the ledger.  `
     ```
+
 ## Modules integration
 The integration between the different modules takes place in each of the methods defined for the HFB chaincode. Considering that in **Part 3** each of the chaincode methods were defined, we will now focus on a single method to analyze how the integration between modules takes place. The selected method is `proposeAgreementInitiation`, which has been defined in Part-3 as *the proposal to initiate the **Roaming Agreement** drafting by one of the two participating MNOs, causing the transition from the initial state to the `started_ra` as shown in the Figure 1:
 
@@ -52,7 +51,6 @@ Table 1 summarizes the details of the implementation of the `proposeAgreementIni
 | proposeAgreementInitiation | started_ra |          started_ra          |              Init               |              -              |
 
 ## How methods drive state change
-
 Considering that the execution of each of the methods allows to verify, update or generate states, Table 2 recapitulates the types of states defined in Part-3, associated to the application level. Thus, Figure 3 allows relating methods and states according to the different application levels.
 
 |                  Status                  |    Application level    |
@@ -113,7 +111,7 @@ Once the main implementation criteria have been analyzed, the getting started ne
     ```
 13. Enable go mod
     ```
-    go mod init ~/go/src/name_of_the_project/chaincode
+    go mod init ~/go/src/name_of_the_project/network/chaincode
     ```
 14. Install dependencies
     ```
@@ -130,21 +128,20 @@ Once the main implementation criteria have been analyzed, the getting started ne
 16. Building a vendor is necessary to import all the external dependencies needed for the basic functionality of the chaincode into a local vendor directory
     If the chaincode does not run because of the vendor, it can be built from scratch:
     ```
-    cd   ~/go/src/name_of_the_project/chaincode
+    cd   ~/go/src/name_of_the_project/network/chaincode
     dep  init
     ```
 17. Also if it already exists, the missing packages can be imported using the update option:
     ```
-    cd   ~/go/src/name_of_the_project/chaincode
+    cd   ~/go/src/name_of_the_project/network/chaincode
     dep  ensure -v
     ```
-
+    
 ## Implementation's challenges
-
 Finally, in this topic we consider points of interest throughout the chaincode implementation process that constituted challenges:
 
 1. Working with pointers on nested structures: Our chaincode defines numerous nested structures, which must be initialized and updated constantly throughout the chaincode's life cycle. To avoid receiving a copy of a value receiver that does not update the structure, a pointer to the memory that contains the structure must be used. For a better understanding of how to work with nested structures using pointers we have included the following [example](https://play.golang.org/p/UoeBH_2EZdb) on a golang test runtime.
-2. Generating unique identifiers: The chaincode lifecycle contains two main unique identifiers: Roaming Agreement Idenfier (RAID) and Articles Identifier (articlesID). To ensure that the identifiers are unique and avoid collisions, the resource used has been to generate a uuid and then compute the sha256 from it, which will constitute the identifier. The functionalities used for this purpose are implemented within the Util Module.
+2. Generating unique identifiers: The chaincode lifecycle contains two main unique identifiers: Roaming Agreement Idenfier (RAID) and Articles Identifier (articlesID). To ensure that the identifiers are unique and avoid collisions, the resource used has been to generate a uuid and then compute the *SHA-256* from it, which will constitute the identifier. The functionalities used for this purpose are implemented within the Util Module.
 
 ## Interest links:
 - The designs can be modified using the [App Diagrams Tool](https://app.diagrams.net/). 
