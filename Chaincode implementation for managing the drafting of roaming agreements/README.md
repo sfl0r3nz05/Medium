@@ -66,9 +66,12 @@ Considering that the execution of each of the methods allows to verify, update o
 ## Getting Started to deploy the chaincode
 Once the main implementation criteria have been analyzed, the getting started necessary to modify the chaincode is documented:
 
-1. Download Golang Version: `wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz`.
-2. To verify the tarball checksum it can be used the sha256sum command: `sha256sum go1.16.7.linux-amd64.tar.gz`.
-3. Copy Golang bynary into executable folder: `sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.16.7.linux-amd64.tar.gz`.
+1. Download Golang Version: 
+    `wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz`.
+2. To verify the tarball checksum it can be used the sha256sum command: 
+    `sha256sum go1.16.7.linux-amd64.tar.gz`.
+3. Copy Golang bynary into executable folder: 
+    `sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.16.7.linux-amd64.tar.gz`.
 4. Define the GOPATH environmental variable:
     ```
     export GOPATH=$HOME/go
@@ -82,31 +85,31 @@ Once the main implementation criteria have been analyzed, the getting started ne
     ```
     export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
     ```
-7. Enabling changes in the `profile` file
+8. Enabling changes in the `profile` file
     ```
     source ~/.profile
     ```
-8. Verify Golang version
+9. Verify Golang version
     ```
     go version
     ```
-9. By default the workspace directory is set to $HOME/go
+10. By default the workspace directory is set to $HOME/go
     ```
     mkdir ~/go
     ```
-10. Inside the workspace create a new directory
+11. Inside the workspace create a new directory
     ```
     mkdir -p ~/go/src/chaincode
     ```
-11. To edit changes directly on implementation folder of the respository must be created a Symbolic Link
+12. To edit changes directly on implementation folder of the respository must be created a Symbolic Link
     ```
     sudo ln -s $GOPATH/src/github.com/nlp-dlt/chaincode/implementation/* ~/go/src/chaincode
     ```
-12. Enable go mod
+13. Enable go mod
     ```
     go mod init ~/go/src/name_of_the_project/chaincode
     ```
-13. Install dependencies
+14. Install dependencies
     ```
     go get github.com/google/uuid
     go get github.com/sirupsen/logrus
@@ -114,17 +117,17 @@ Once the main implementation criteria have been analyzed, the getting started ne
     go get github.com/hyperledger/fabric-chaincode-go/shim
     go get github.com/hyperledger/fabric-chaincode-go/pkg/cid
     ```
-14. Build the changes
+15. Build the changes
     ```
     go build
     ```
-15. Building a vendor is necessary to import all the external dependencies needed for the basic functionality of the chaincode into a local vendor directory
+16. Building a vendor is necessary to import all the external dependencies needed for the basic functionality of the chaincode into a local vendor directory
     If the chaincode does not run because of the vendor, it can be built from scratch:
     ```
     cd   ~/go/src/name_of_the_project/chaincode
     dep  init
     ```
-16. Also if it already exists, the missing packages can be imported using the update option:
+17. Also if it already exists, the missing packages can be imported using the update option:
     ```
     cd   ~/go/src/name_of_the_project/chaincode
     dep  ensure -v
