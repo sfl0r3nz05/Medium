@@ -27,6 +27,13 @@ Other relevant features defined chaincode implementation are:
     ERRORParsingData                    = `Error parsing data `
     ERRORPutState                       = `Failed to store data into the ledger.  `
     ```
+## Modules integration
+The integration between the different modules takes place in each of the methods defined for the chaincode. Considering that in **Part 3** each of the chaincode methods was defined, in the following we will focus on only one method in order to comprehend how the integration between the modules is. For example, the `proposeAgreementInitiation` method, which has been defined as *the proposal to initiate the drafting of the **Roaming Agreement** is carried out by one of the two participating MNOs through this method*, directly participates in the transition from the initial state to the `started_ra`.
+
+<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Roaming_Agreement_State_v03.drawio.png">
+
+## Métodos conducen al cambio de estado
+
 ## Getting Started to deploy the chaincode
 1. Download Golang Version: `wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz`.
 2. To verify the tarball checksum it can be used the sha256sum command: `sha256sum go1.16.7.linux-amd64.tar.gz`.
