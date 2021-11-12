@@ -30,7 +30,7 @@ Other relevant features defined chaincode implementation are:
 ## Modules integration
 The integration between the different modules takes place in each of the methods defined for the chaincode. Considering that in **Part 3** each of the chaincode methods was defined, in the following we will focus on only one method in order to comprehend how the integration between the modules is. For example, the `proposeAgreementInitiation` method, which has been defined as *the proposal to initiate the drafting of the **Roaming Agreement** is carried out by one of the two participating MNOs through this method*, directly participates in the transition from the initial state to the `started_ra`.
 
-<img src="https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/documentation/images/Roaming_Agreement_State_v03.drawio.png">
+<img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/Roaming_Agreement_State_v03.drawio.png">
 
 ## Métodos conducen al cambio de estado
 
