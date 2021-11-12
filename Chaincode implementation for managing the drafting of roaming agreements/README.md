@@ -34,7 +34,20 @@ The integration between the different modules takes place in each of the methods
 
 Figure 2 shows the sequence diagram illustrating the relationship between the modules defined above. 
 
-<img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/Roaming_Agreement_State_v03.drawio.png">
+<img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/diagram_sequence_chaincode_v17.drawio.png">
+
+In this way, a registered MNO enables the drafting of an **Roaming Agreement**. Thus, the *Proxy Module* enables the interactions with other modules. Firstly, the *Identity Module* allows to verify the MNO Identity. The *Organization Module* verifies whether the MNO exists, i.e. has been previously registered. Considering that the names of the two participating organizations and the Roaming Agreement name constitute the input arguments, the *Agreements Module* performs the following functionalities:
+
+1. Generation of the unique identifier for the list of Articles: `articlesId`
+2. Generation of the unique identifier for the roaming agreement: `RAID`.
+3. The `started_ra` event is emitted.
+4. The Status for the Roaming Agreement Negotiation is set as `started_ra`.
+5. The Status for the Articles Negotiation is set as `init`.
+
+Table 1 summarizes the details of the implementation of the `proposeAgreementInitiation` method:
+|           Method           |   Event    | Status for Roaming Agreement | Status for Articles Negotiation | Status for Article Drafting |
+| :------------------------: | :--------: | :--------------------------: | :-----------------------------: | :-------------------------: |
+| proposeAgreementInitiation | started_ra |          started_ra          |              Init               |              -              |
 
 ## How methods drive state change
 
