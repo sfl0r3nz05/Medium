@@ -10,22 +10,22 @@ The chaincode implementation consists of 6 modules which are described below:
 
 1. [Proxy](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/proxy.go): This module receives the interactions from the off-chain side and routes them to the different points within the chaincode.
 2. [Organization](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/organization.go): This module contains all the interactions related to organizations, allowing to create a new organization, querying existing organizations, etc.
-[Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/agreement.go): This module contains all interactions related to the roaming agreement, allowing to add and update articles, change states, etc.
-3. [Identity](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/proxy.go): This module is inserted inside the proxy and allows identity verification using the cid library.
-4. [Util](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/util.go): This module contains common functionalities for the rest of the modules. E.g., UUID generation.
+3. [Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/agreement.go): This module contains all interactions related to the roaming agreement, allowing to add and update articles, change states, etc.
+4. [Identity](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/proxy.go): This module is inserted inside the proxy and allows identity verification using the cid library.
+5. [Util](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/util.go): This module contains common functionalities for the rest of the modules. E.g., UUID generation.
 6. [Models](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/models.go): This module contains the definitions of variables, structures and data types supported by the chaincode. In addition, different error types are defined for proper error handling.
 
-Other relevant features of the chaincode implementation are:
-- [Logrus library](https://github.com/sirupsen/logrus) is used for log generation. Relevant information such as the channel, the method, the error definition as well as the error message obtained from the chaincode itself is included in each of the logs emitted. The following is an example of a log defined for the *verifyOrg* method:
+Other relevant features defined chaincode implementation are:
+- [Logrus library](https://github.com/sirupsen/logrus) used for log generation. Relevant information such as the channel, the method, the error definition as well as the error message obtained from the chaincode itself is included in each of the logs emitted. The following is an example of a log defined for the *verifyOrg* method:
 
     ```
     log.Errorf("[%s][%s][verifyOrg] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())
     ```
-- Error handling
+- Definition of error handling through a set of variables included in the model. For instance:
     ```
     ERRORWrongNumberArgs                = `Wrong number of arguments. Expecting a JSON with token information.`
     ERRORParsingData                    = `Error parsing data `
-    ERRORPutState                       = `Failed to store data in the ledger.  `
+    ERRORPutState                       = `Failed to store data into the ledger.  `
     ```
 ## Getting Started to deploy the chaincode
 1. Download Golang Version: `wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz`.
