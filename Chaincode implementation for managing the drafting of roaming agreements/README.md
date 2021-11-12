@@ -32,6 +32,10 @@ The integration between the different modules takes place in each of the methods
 
 <img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/Roaming_Agreement_State_v03.drawio.png">
 
+Figure 2 shows the sequence diagram illustrating the relationship between the modules defined above. 
+
+<img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/Roaming_Agreement_State_v03.drawio.png">
+
 ## How methods drive state change
 
 ## Getting Started to deploy the chaincode
