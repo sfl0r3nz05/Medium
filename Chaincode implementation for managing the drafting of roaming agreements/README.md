@@ -67,9 +67,9 @@ Considering that the execution of each of the methods allows to verify, update o
 Once the main implementation criteria have been analyzed, the getting started necessary to modify the chaincode is documented:
 
 1. Download Golang Version: 
-    `wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz`.
+`wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz`.
 2. To verify the tarball checksum it can be used the sha256sum command: 
-    `sha256sum go1.16.7.linux-amd64.tar.gz`.
+`sha256sum go1.16.7.linux-amd64.tar.gz`.
 3. Copy Golang bynary into executable folder: 
     `sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.16.7.linux-amd64.tar.gz`.
 4. Define the GOPATH environmental variable:
