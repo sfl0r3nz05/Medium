@@ -103,17 +103,14 @@ Once the main implementation criteria have been analyzed, the getting started ne
     ```
 11. Inside the workspace create a new directory
     ```
-    mkdir -p ~/go/src/chaincode
+    mkdir -p $GOPATH/src/github.com/nlp-dlt/network/chaincode/testcc
     ```
-12. To edit changes directly on implementation folder of the respository must be created a Symbolic Link
     ```
-    sudo ln -s $GOPATH/src/github.com/nlp-dlt/chaincode/implementation/* ~/go/src/chaincode
+12. Enable go mod
     ```
-13. Enable go mod
+    go mod init $GOPATH/src/github.com/nlp-dlt/network/chaincode/testcc
     ```
-    go mod init ~/go/src/name_of_the_project/network/chaincode
-    ```
-14. Install dependencies
+13. Install dependencies
     ```
     go get github.com/google/uuid
     go get github.com/sirupsen/logrus
@@ -121,19 +118,19 @@ Once the main implementation criteria have been analyzed, the getting started ne
     go get github.com/hyperledger/fabric-chaincode-go/shim
     go get github.com/hyperledger/fabric-chaincode-go/pkg/cid
     ```
-15. Build the changes
+14. Build the changes
     ```
     go build
     ```
-16. Building a vendor is necessary to import all the external dependencies needed for the basic functionality of the chaincode into a local vendor directory
+15. Building a vendor is necessary to import all the external dependencies needed for the basic functionality of the chaincode into a local vendor directory
     If the chaincode does not run because of the vendor, it can be built from scratch:
     ```
-    cd   ~/go/src/name_of_the_project/network/chaincode
+    cd   $GOPATH/src/github.com/nlp-dlt/network/chaincode/testcc
     dep  init
     ```
-17. Also if it already exists, the missing packages can be imported using the update option:
+16. Also if it already exists, the missing packages can be imported using the update option:
     ```
-    cd   ~/go/src/name_of_the_project/network/chaincode
+    cd   $GOPATH/src/github.com/nlp-dlt/network/chaincode/testcc
     dep  ensure -v
     ```
     
