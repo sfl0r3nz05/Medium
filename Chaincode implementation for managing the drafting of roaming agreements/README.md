@@ -1,7 +1,7 @@
 # Chaincode implementation for managing the drafting of roaming agreements
-The following is **Part-4** of a **6-Part** series associated with the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), with the main objective of transforming the **Telecom Roaming Agreement's** drafting and negotiation process into a digitalized version based on the transparency promoted by *blockchain* technology. The other authors of this story are Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif.
+The following is **Part-4** of a **6-Part** series associated with the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), with the main objective of transforming the **Telecom Roaming Agreement's** drafting and negotiation process into a digitalized version based on the transparency promoted by *blockchain* technology. Other authors who contributed to this article are: Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif.
 
-**Part 3** of the series analyzed the design of the Hyperledger Fabric Blockchain (HFB) chaincode as the main element of the project to manage on-chain all the interactions to represent the businesses processes related to the drafting and negotiation of the **Roaming Agreement**. In this way, the interactions through actions led to the transition between different states providing all the necessary traceability from the time an Mobile Network Operator (MNO) registers on the HFB platform until an agreement is reached between two MNOs. This **Part-4** continues with the chaincode analysis, however, now from an implementation perspective.
+**Part 3** **ADD LINK to Part 3** of the series analyzed the design of the Hyperledger Fabric Blockchain (HFB) chaincode as the main element of the project to manage on-chain all the interactions to represent the businesses processes related to the drafting and negotiation of the **Roaming Agreement**. In this way, the interactions through actions led to the transition between different states providing all the necessary traceability from the time a Mobile Network Operator (MNO) registers on the HFB platform until an agreement is reached between two MNOs. This **Part-4** continues with the chaincode analysis, however, now from an implementation perspective.
 
 ## The chaincode modules
 The chaincode implementation consists of 6 modules which are described below:
@@ -14,7 +14,7 @@ The chaincode implementation consists of 6 modules which are described below:
 6. [Models](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/models.go): This module contains the definitions of variables, structures and data types supported by the chaincode. In addition, different error types are defined for proper error handling.
 
 Other relevant features defined chaincode implementation are:
-- [Logrus library](https://github.com/sirupsen/logrus) used for log generation. Relevant information such as the channel, the method, the error definition as well as the error message obtained from the chaincode itself is included in each of the logs emitted. The following is an example of a log defined for the *verifyOrg* method:
+- [Logrus library](https://github.com/sirupsen/logrus) used for log generation. Relevant information such as the channel, the method, the error definition as well as the error message obtained from the chaincode itself is included in each of the logs generated. The following is an example of a log defined for the *verifyOrg* method:
 
     ```
     log.Errorf("[%s][%s][verifyOrg] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())
@@ -27,11 +27,11 @@ Other relevant features defined chaincode implementation are:
     ```
 
 ## Modules integration
-The integration between the different modules takes place in each of the methods defined for the HFB chaincode. Considering that in **Part 3** each of the chaincode methods were defined, we will now focus on a single method to analyze how the integration between modules takes place. The selected method is `proposeAgreementInitiation`, which has been defined in Part-3 as *the proposal to initiate the **Roaming Agreement** drafting by one of the two participating MNOs, causing the transition from the initial state to the `started_ra` as shown in the Figure 1:
+The integration between the different modules takes place in each of the methods defined for the HFB chaincode. Considering that in **Part 3** each of the chaincode methods were defined, we will now focus on a single method to analyze how the integration between modules takes place. The selected method is `proposeAgreementInitiation`, which has been defined in Part-3 as **the proposal to initiate the Roaming Agreement** drafting by one of the two participating MNOs, causing the transition from the initial state to the `started_ra` as shown in the follwing figure:
 
 <img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/Roaming_Agreement_State_v03.drawio.png">
 
-Figure 2 shows the sequence diagram illustrating the relationship between the modules defined above. 
+The figure below shows the sequence diagram illustrating the relationship between the modules defined above. 
 
 <img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/diagram_sequence_chaincode_v17.drawio.png">
 
@@ -51,7 +51,7 @@ Table 1 summarizes the details of the implementation of the `proposeAgreementIni
 | proposeAgreementInitiation | started_ra |          started_ra          |              Init               |              -              |
 
 ## How methods drive state change
-Considering that the execution of each of the methods allows to verify, update or generate states, Table 2 recapitulates the types of states defined in Part-3, associated to the application level. Thus, Figure 3 allows relating methods and states according to the different application levels.
+Considering that the execution of each of the methods allows to verify, update or generate states, Table 2 recapitulates the types of states defined in Part-3, associated to the application level. Thus, the next figure allows relating methods and states according to the different application levels.
 
 |                  Status                  |    Application level    |
 | :--------------------------------------: | :---------------------: |
@@ -134,8 +134,8 @@ Once the main implementation criteria have been analyzed, the getting started ne
     dep  ensure -v
     ```
     
-## Implementation's challenges
-Finally, in this topic we consider points of interest throughout the chaincode implementation process that constituted challenges:
+## Challenges encountered during Implementation: 
+Finally, in this topic we consider points of interest throughout the chaincode implementation process that represented challenges to us as designers and developers:
 
 1. Working with pointers on nested structures: Our chaincode defines numerous nested structures, which must be initialized and updated constantly throughout the chaincode's life cycle. To avoid receiving a copy of a value receiver that does not update the structure, a pointer to the memory that contains the structure must be used. For a better understanding of how to work with nested structures using pointers we have included the following [example](https://play.golang.org/p/UoeBH_2EZdb) on a golang test runtime.
 2. Generating unique identifiers: The chaincode lifecycle contains two main unique identifiers: Roaming Agreement Idenfier (RAID) and Articles Identifier (articlesID). To ensure that the identifiers are unique and avoid collisions, the resource used has been to generate a uuid and then compute the *SHA-256* from it, which will constitute the identifier. The functionalities used for this purpose are implemented within the Util Module.
