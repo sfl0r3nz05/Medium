@@ -1,19 +1,19 @@
 # Chaincode implementation for managing the drafting of roaming agreements
-The following is **Part-4** of a **6-Part** series associated with the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), with the main objective of transforming the **Telecom Roaming Agreement's** drafting and negotiation process into a digitalized version based on the transparency promoted by *blockchain* technology. Other authors who contributed to this article are: Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif.
+The following is **Part-4** of a **6-Part** series associated with the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), with the main objective of transforming the **Telecom Roaming Agreement's** drafting and negotiation process into a digitalized version based on the transparency promoted by *blockchain* technology. Other authors who contributed to this seris of articles are: Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif.
 
-**Part 3** **ADD LINK to Part 3** of the series analyzed the design of the Hyperledger Fabric Blockchain (HFB) chaincode as the main element of the project to manage on-chain all the interactions to represent the businesses processes related to the drafting and negotiation of the **Roaming Agreement**. In this way, the interactions through actions led to the transition between different states providing all the necessary traceability from the time a Mobile Network Operator (MNO) registers on the HFB platform until an agreement is reached between two MNOs. This **Part-4** continues with the chaincode analysis, however, now from an implementation perspective.
+**Part 3** **ADD LINK to Part 3** of the series analyzed the design of the Hyperledger Fabric Blockchain (HFB) chaincode as the main element of the project to manage on-chain all the interactions to represent the businesses processes related to the drafting and negotiation of the **Roaming Agreement**. In the proposed design, the interactions through actions led to the transition between different states providing all the necessary traceability from the time a Mobile Network Operator (MNO) registers on the HFB platform until an agreement is reached between two MNOs. This **Part-4** continues with the chaincode analysis, however, we focus in this article on the implementation side of the project.
 
 ## The chaincode modules
 The chaincode implementation consists of 6 modules which are described below:
 
 1. [Proxy](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/proxy.go): This module receives the interactions from the off-chain side and routes them to the different points within the chaincode.
 2. [Organization](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/organization.go): This module contains all the interactions related to organizations, allowing to create a new organization, querying existing organizations, etc.
-3. [Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/agreement.go): This module contains all interactions related to the roaming agreement, allowing to add and update articles, change states, etc.
+3. [Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/agreement.go): This module contains all interactions related to the roaming agreement, allowing to add and update articles by specifying the articles variables values, variations selection and any proposed custom text. Also, this module handles article state transations (e.g., proposed-to-accepted) and the possible proposal changes.
 4. [Identity](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/proxy.go): This module is inserted inside the proxy and allows identity verification using the cid library.
-5. [Util](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/util.go): This module contains common functionalities for the rest of the modules. E.g., UUID generation.
+5. [Util](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/util.go): This module contains common functionalities for the rest of the modules, e.g., UUID generation.
 6. [Models](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/models.go): This module contains the definitions of variables, structures and data types supported by the chaincode. In addition, different error types are defined for proper error handling.
 
-Other relevant features defined chaincode implementation are:
+Other relevant features defined in the chaincode implementation are:
 - [Logrus library](https://github.com/sirupsen/logrus) used for log generation. Relevant information such as the channel, the method, the error definition as well as the error message obtained from the chaincode itself is included in each of the logs generated. The following is an example of a log defined for the *verifyOrg* method:
 
     ```
@@ -35,7 +35,7 @@ The figure below shows the sequence diagram illustrating the relationship betwee
 
 <img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/diagram_sequence_chaincode_v17.drawio.png">
 
-In this way, a registered MNO enables the drafting of an **Roaming Agreement**. Thus, the *Proxy Module* enables the interactions with other modules. Firstly, the *Identity Module* allows to verify the MNO Identity. The *Organization Module* verifies whether the MNO exists, i.e. has been previously registered. Considering that the names of the two participating organizations and the Roaming Agreement name constitute the input arguments, the *Agreements Module* performs the following functionalities:
+In this way, a registered MNO enables the drafting of a **Roaming Agreement**. Thus, the *Proxy Module* enables the interactions with other modules. Firstly, the *Identity Module* allows to verify the MNO Identity. The *Organization Module* verifies whether the MNO exists, i.e. has been previously registered. Considering that the names of the two participating organizations and the Roaming Agreement name constitute the input arguments, the *Agreements Module* performs the following functionalities:
 
 1. Generation of the unique identifier for the list of Articles: `articlesId`
 2. Generation of the unique identifier for the roaming agreement: `RAID`.
@@ -50,8 +50,8 @@ Table 1 summarizes the details of the implementation of the `proposeAgreementIni
 | :------------------------: | :--------: | :--------------------------: | :-----------------------------: | :-------------------------: |
 | proposeAgreementInitiation | started_ra |          started_ra          |              Init               |              -              |
 
-## How methods drive state change
-Considering that the execution of each of the methods allows to verify, update or generate states, Table 2 recapitulates the types of states defined in Part-3, associated to the application level. Thus, the next figure allows relating methods and states according to the different application levels.
+## How methods drive state change?
+Considering that the execution of each of these methods allows to verify, update or generate states, Table 2 summarizes the types of states defined in Part-3, associated to the application level. Thus, the next figure allows relating methods and states according to the different application levels.
 
 |                  Status                  |    Application level    |
 | :--------------------------------------: | :---------------------: |
@@ -62,7 +62,7 @@ Considering that the execution of each of the methods allows to verify, update o
 <img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/Status_Integration.png">
 
 ## Getting Started to deploy the chaincode
-Once the main implementation criteria have been analyzed, the getting started necessary to modify the chaincode is documented:
+Having explained the main implementation aspects, and to offer an easy guide for getting started we thought it is necessary to provide a step-by-step guide on how to deploy the chaincode and test it. Those steps are listed hereafter:
 
 1. Download Golang Version: 
     ```
@@ -135,7 +135,7 @@ Once the main implementation criteria have been analyzed, the getting started ne
     ```
     
 ## Challenges encountered during Implementation: 
-Finally, in this topic we consider points of interest throughout the chaincode implementation process that represented challenges to us as designers and developers:
+Finally, in this topic we consider ceratins points of interest throughout the chaincode implementation process that represented challenges to us as designers and developers:
 
 1. Working with pointers on nested structures: Our chaincode defines numerous nested structures, which must be initialized and updated constantly throughout the chaincode's life cycle. To avoid receiving a copy of a value receiver that does not update the structure, a pointer to the memory that contains the structure must be used. For a better understanding of how to work with nested structures using pointers we have included the following [example](https://play.golang.org/p/UoeBH_2EZdb) on a golang test runtime.
 2. Generating unique identifiers: The chaincode lifecycle contains two main unique identifiers: Roaming Agreement Idenfier (RAID) and Articles Identifier (articlesID). To ensure that the identifiers are unique and avoid collisions, the resource used has been to generate a uuid and then compute the *SHA-256* from it, which will constitute the identifier. The functionalities used for this purpose are implemented within the Util Module.
