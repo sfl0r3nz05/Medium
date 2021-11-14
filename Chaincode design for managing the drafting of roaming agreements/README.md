@@ -4,7 +4,7 @@ The following is **Part-3** of a **6-Part** series associated with the project [
 
 **Part 2** of the series analyzed the design of an NLP-based engine to determine whether the articles and sub-articles of a **Roaming Agreement** constitute a *standard clause*, a *variation* or a *customized text* regarding the GSMA standard templates. In addition, if the sub-article is tagged as a *variation*, the NLP engine collects the existing *variables*. Although **Part 2** is key to the development of the *project*, the main element of the *project* is constituted by the smart contract, i.e. the *chaincode* for *Hyperledger Fabric Blockchain*, which will manage on-chain all the interactions representing the businesses processes related to the drafting and negotiation of the **Roaming Agreement**.
 
-For a better understanding, the analysis of the chaincode will be divided into two parts. This part (**Part-3**) focuses on the details of the chaincode design, while **Part-4** of this series will focus on the *implementation*, *deployment* and *testing* of the chaincode.
+For a better understanding, the analysis of the chaincode will be divided into two parts. This part (**Part-3**) focuses on the details of the chaincode design, while [**Part-4**](https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645) of this series will focus on the *implementation*, *deployment* and *testing* of the chaincode.
 
 From a design point of view, the project chaincode is defined by actions and statuses, where interactions through actions allow the transition between each of the statuses. The statuses represent the different phases and transition starting with the enabling of a **Mobile Network Operator (MNO)** until it reaches the final signed **Roaming Agreement** with another counterparty, **MNO**. Therefore, it is necessary to put the focus on the statuses that govern the chaincode. Thus, the chaincode for **Roaming Agreement** negotiation consists of three stages: (1) **Statuses for Roaming Agreement Negotiation**, (2) **Statuses for the Articles Negotiation** and (3) **Statuses for the Article Drafting**.
 
@@ -22,32 +22,32 @@ However, the fact that all articles are in accepted status by both MNOs at a giv
 
 As mentioned, the transition between states is due to the interaction between the two parties through the identified actions. From a programming point of view, the actions are performed through chaincode methods, which are invoked or queried using the frontend application through a middleware/backend service. The following Table defines the set of design methods that are part of the chaincode.
 
-|Method                     |Description           |
-|:-------------------------:|----------------------|
-|addOrg                     |This method is part of the initial status and allows you to register any MNO that is part of the Hyperledger Fabric Blockchain network before drafting the **Roaming Agreement** with another MNO.|
-|proposeAgreementInitiation |The proposal to initiate the drafting of the **Roaming Agreement** is carried out by one of the two participating MNOs through this method. |
-|acceptAgreementInitiation  |As mentioned, the proposed wording of the iteration agreement must be confirmed by the MNO that did not propose the **Roaming Agreement** initiation, for which the following method is used. |
-|proposeAddArticle          |The drafting of the **Roaming Agreement** involves the proposed addition of the articles. |
-|proposeUpdateArticle       |The proposal for added articles can be modified using this method. |
-|acceptProposedChanges      |The changes made to an article added or a proposed modification must be confirmed before the article being considered as accepted. |
-|proposeReachAgreement      |Once all drafted articles have been accepted any of the participating MNOs can apply to reach the **Roaming Agreement** using this method. |
-|acceptReachAgreement       |To reach the **Roaming Agreement** the proposed agreement must be accepted from this method.|
-|queryMNO |This method allows retrieving the information associated with an MNO. |
-|queryRAID |This method allows retrieving information of the **Roaming Agreement**. |
-|querySingleArticle         |This method allows querying a single article. |
-|queryAllArticles           |This method allows querying all articles added to the negotiation process. |
+|           Method           | Description                                                                                                                                                                                        |
+| :------------------------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|           addOrg           | This method is part of the initial status and allows you to register any MNO that is part of the Hyperledger Fabric Blockchain network before drafting the **Roaming Agreement** with another MNO. |
+| proposeAgreementInitiation | The proposal to initiate the drafting of the **Roaming Agreement** is carried out by one of the two participating MNOs through this method.                                                        |
+| acceptAgreementInitiation  | As mentioned, the proposed wording of the iteration agreement must be confirmed by the MNO that did not propose the **Roaming Agreement** initiation, for which the following method is used.      |
+|     proposeAddArticle      | The drafting of the **Roaming Agreement** involves the proposed addition of the articles.                                                                                                          |
+|    proposeUpdateArticle    | The proposal for added articles can be modified using this method.                                                                                                                                 |
+|   acceptProposedChanges    | The changes made to an article added or a proposed modification must be confirmed before the article being considered as accepted.                                                                 |
+|   proposeReachAgreement    | Once all drafted articles have been accepted any of the participating MNOs can apply to reach the **Roaming Agreement** using this method.                                                         |
+|    acceptReachAgreement    | To reach the **Roaming Agreement** the proposed agreement must be accepted from this method.                                                                                                       |
+|          queryMNO          | This method allows retrieving the information associated with an MNO.                                                                                                                              |
+|         queryRAID          | This method allows retrieving information of the **Roaming Agreement**.                                                                                                                            |
+|     querySingleArticle     | This method allows querying a single article.                                                                                                                                                      |
+|      queryAllArticles      | This method allows querying all articles added to the negotiation process.                                                                                                                         |
 
 To ensure traceability of all interactions that happen from the off-chain side with the chaincode, most methods generate events that provide traceability-relevant information such as the organization(s) involved, the timestamp at which it was generated, and the name of the event. Next, the following Table relates Methods and the Events generated by them. It should be noted that only the methods that invoke transactions are those that generate events.
 
-|Method                     |Event name              |
-|:-------------------------:|:----------------------:|
-|addOrg                     |created_org             |
-|proposeAgreementInitiation |started_ra              |
-|acceptAgreementInitiation  |confirmation_ra_started |
-|proposeAddArticle          |proposed_add_article    |
-|proposeUpdateArticle       |proposed_update_article |
-|acceptProposedChanges      |accept_proposed_changes |
-|proposeReachAgreement      |proposal_accepted_ra    |
-|acceptReachAgreement       |confirmation_accepted_ra|
+|           Method           |        Event name        |
+| :------------------------: | :----------------------: |
+|           addOrg           |       created_org        |
+| proposeAgreementInitiation |        started_ra        |
+| acceptAgreementInitiation  | confirmation_ra_started  |
+|     proposeAddArticle      |   proposed_add_article   |
+|    proposeUpdateArticle    | proposed_update_article  |
+|   acceptProposedChanges    | accept_proposed_changes  |
+|   proposeReachAgreement    |   proposal_accepted_ra   |
+|    acceptReachAgreement    | confirmation_accepted_ra |
 
-To complete the main element of the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), **part 4** of this series of 6 will analyze the *implementation*, *deployment* and *testing* approaches of the Chaincode. However, it is clear that there is relevant information located off-chain, hence **part 5** of the series details the implementation of the *backend* to manage the off-chain part and finally **part 6**  of the series details the *frontend* implementation criteria to perform the interactions using a user-friendly application.
+To complete the main element of the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), [**Part-4**](https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645) of this 6-Part series will analyze the *implementation*, *deployment* and *testing* approaches of the Chaincode. However, it is clear that there is relevant information located off-chain, hence **Part-5** of the series details the implementation of the *backend* to manage the off-chain part and finally **Part-6**  of the series details the *frontend* implementation criteria to perform the interactions using a user-friendly application.
