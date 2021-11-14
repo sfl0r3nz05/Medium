@@ -1,4 +1,4 @@
-# NLP Engine to detect variables, standard clauses, variations, and customized texts
+# NLP Engine to detect variables, standard clauses, variations, and customized texts.
 
 The following is **Part-2** of a **6-Part series** associated with the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), with the main objective of *transforming the **Telecom Roaming Agreement** drafting and negotiation process into a digitalized version based on the transparency promoted by **blockchain** technology*. [Ahmad Sghaier](https://medium.com/@asghaier76), [Noureddin Sadawi](https://medium.com/@noureddin.sadawi), and [Mohamed Elshrif](https://medium.com/@melshrif) are also authors of this part.
 
@@ -63,11 +63,11 @@ Since pdf files consist of unstructured text and e.g., undesired characters may 
 This **accuracy analysis** involves randomly selecting 5 articles from the sample **Roaming Agreement** and performing a visual inspection (human-eye inspection) to determine the number of *variations*, *standard clauses*, and *custom texts* that exist. The results obtained are then compared with the values populated in the  **article and sub-article classification file** for the same articles. The confusion matrix below sets the hit rate for *standard clause* detection at 80%, for *variation* detection at 81%, and for *custom text* detection at 100%.
 
 ###### Proximus Roaming Agreement
-|n = 33           |stdClause|variation|customText| 
-|:---------------:|:-------:|:-------:|:--------:| 
-|stdClause        |9        |1        |0         |
-|variation        |1        |17       |3         | 
-|customText       |0        |0        |3         |
+|   n = 33   | stdClause | variation | customText |
+| :--------: | :-------: | :-------: | :--------: |
+| stdClause  |     9     |     1     |     0      |
+| variation  |     1     |    17     |     3      |
+| customText |     0     |     0     |     3      |
 
 The detailed results obtained for this experiment have been published in the scientific paper "A Natural Language Processing Approach for the
 Digitalization of Roaming Agreement" in the conference [ILCICT 2021](https://ilcict.lit.ly/en/). This manuscript also contains the results for another experiment based on an analysis conducted at the symbol level using the text comparison tool [Countwordsfree](https://countwordsfree.com/comparetexts).
