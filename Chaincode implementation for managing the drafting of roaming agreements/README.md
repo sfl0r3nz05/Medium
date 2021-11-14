@@ -1,25 +1,25 @@
 # Chaincode implementation for managing the drafting of roaming agreements
-The following is **Part-4** of a **6-Part** series associated with the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), with the main objective of transforming the **Telecom Roaming Agreement's** drafting and negotiation process into a digitalized version based on the transparency promoted by *blockchain* technology. Other authors who contributed to this seris of articles are: Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif.
+The following is **Part-4** of a **6-Part** series associated with the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), with the main objective of transforming the **Telecom Roaming Agreement's** drafting and negotiation process into a digitalized version based on the transparency promoted by *blockchain* technology. Other authors who contributed to this series of articles are Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif.
 
-[**Part 3**](https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645) of the series analyzed the design of the Hyperledger Fabric Blockchain (HFB) chaincode as the main element of the project to manage on-chain all the interactions to represent the businesses processes related to the drafting and negotiation of the **Roaming Agreement**. In the proposed design, the interactions through actions led to the transition between different states providing all the necessary traceability from the time a Mobile Network Operator (MNO) registers on the HFB platform until an agreement is reached between two MNOs. This **Part-4** continues with the chaincode analysis, however, we focus in this article on the implementation side of the project.
+[**Part-3**](https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645) of the series analyzed the design of the Hyperledger Fabric Blockchain (HFB) chaincode as the main element of the project to manage on-chain all the interactions to represent the businesses processes related to the drafting and negotiation of the **Roaming Agreement**. In the proposed design, the interactions through actions led to the transition between different states providing all the necessary traceability from the time a Mobile Network Operator (MNO) registers on the HFB platform until an agreement is reached between two MNOs. This **Part-4** continues with the chaincode analysis, however, we focus in this article on the implementation side of the project.
 
 ## The chaincode modules
 The chaincode implementation consists of 6 modules which are described below:
 
 1. [Proxy](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/proxy.go): This module receives the interactions from the off-chain side and routes them to the different points within the chaincode.
 2. [Organization](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/organization.go): This module contains all the interactions related to organizations, allowing to create a new organization, querying existing organizations, etc.
-3. [Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/agreement.go): This module contains all interactions related to the roaming agreement, allowing to add and update articles by specifying the articles variables values, variations selection and any proposed custom text. Also, this module handles article state transations (e.g., proposed-to-accepted) and the possible proposal changes.
-4. [Identity](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/proxy.go): This module is inserted inside the proxy and allows identity verification using the cid library.
+3. [Agreement](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/agreement.go): This module contains all interactions related to the roaming agreement, allowing to add and update articles by specifying the articles variables values, variations selection and any proposed custom text. Also, this module handles article state transactions (e.g., proposed-to-accepted) and the possible proposed changes.
+4. [Identity](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/proxy.go): This module is inserted inside the proxy and allows identity verification using the [Client Identity Chaincode Library (cid)](https://pkg.go.dev/github.com/hyperledger/fabric-chaincode-go/pkg/cid?utm_source=godoc).
 5. [Util](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/util.go): This module contains common functionalities for the rest of the modules, e.g., UUID generation.
 6. [Models](https://github.com/sfl0r3nz05/NLP-DLT/blob/sentencelvl/chaincode/implementation/models.go): This module contains the definitions of variables, structures and data types supported by the chaincode. In addition, different error types are defined for proper error handling.
 
 Other relevant features defined in the chaincode implementation are:
-- [Logrus library](https://github.com/sirupsen/logrus) used for log generation. Relevant information such as the channel, the method, the error definition as well as the error message obtained from the chaincode itself is included in each of the logs generated. The following is an example of a log defined for the *verifyOrg* method:
+- [Logrus library](https://github.com/sirupsen/logrus) used for log generation. Relevant information such as the channel, the method, the error definition as well as the error message obtained from the chaincode itself is included in each of the logs generated. **Figure 1** is an example of a log defined for the *verifyOrg* method:
 
     ```
     log.Errorf("[%s][%s][verifyOrg] Error recovering: %v", CHANNEL_ENV, ERRORRecoveringOrg, err.Error())
     ```
-- Definition of error handling through a set of variables included in the model. For instance:
+- Definition of error handling through a set of variables included in the model. **Figure 2** shows an example of this definition:
     ```
     ERRORWrongNumberArgs                = `Wrong number of arguments. Expecting a JSON with token information.`
     ERRORParsingData                    = `Error parsing data `
@@ -27,11 +27,11 @@ Other relevant features defined in the chaincode implementation are:
     ```
 
 ## Modules integration
-The integration between the different modules takes place in each of the methods defined for the HFB chaincode. Considering that in **Part 3** each of the chaincode methods were defined, we will now focus on a single method to analyze how the integration between modules takes place. The selected method is `proposeAgreementInitiation`, which has been defined in Part-3 as **the proposal to initiate the Roaming Agreement** drafting by one of the two participating MNOs, causing the transition from the initial state to the `started_ra` as shown in the follwing figure:
+The integration between the different modules takes place in each of the methods defined for the HFB chaincode. Considering that in [**Part-3**](https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645) each of the chaincode methods were defined, we will now focus on a single method to analyze how the integration between modules takes place. The selected method is `proposeAgreementInitiation`, which has been defined in [**Part-3**](https://medium.com/@sfl0r3nz05/chaincode-design-for-managing-the-drafting-of-roaming-agreements-73d3ed1b3645) as **the proposal to initiate the Roaming Agreement** drafting by one of the two participating MNOs, causing the transition from the initial state to the `started_ra` as shown in **Figure 3**:
 
 <img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/Roaming_Agreement_State_v03.drawio.png">
 
-The figure below shows the sequence diagram illustrating the relationship between the modules defined above. 
+**Figure 4** below shows the sequence diagram illustrating the relationship between the modules defined above. 
 
 <img src="https://github.com/sfl0r3nz05/Medium/blob/main/Chaincode%20implementation%20for%20managing%20the%20drafting%20of%20roaming%20agreements/images/diagram_sequence_chaincode_v17.drawio.png">
 
