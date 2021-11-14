@@ -2,7 +2,7 @@
 
 The following is **Part-1** of a **6-Part** series associated with the project [The Use of NLP and DLT to Enable the Digitalization of Telecom Roaming Agreements]( https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements), with the main objective of transforming the **Telecom Roaming Agreement** drafting and negotiation process into a digitalized version based on the transparency promoted by *blockchain* technology. The other authors of this story are Ahmad Sghaier, Noureddin Sadawi, and Mohamed Elshrif. 
 
-Although future parts will go into the technical details of each of the project components, the purpose of this first part is to address the [project's](https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements) initial vision by outlining the problem it solves. Next, we focus our discussion on the main components of **Roaming Agreements** and highlighting the value that **blockchain** technology brings to enable digitization and digitalization of these processes.
+Although future parts will go into the technical details of each of the project components, the purpose of this first part is to address the [project's](https://wiki.hyperledger.org/display/INTERN/Project+Plan%3A+The+Use+of+NLP+and+DLT+to+Enable+the+Digitalization+of+Telecom+Roaming+Agreements) initial vision by outlining the problem it solves. Next, we focus our discussion on the main components of **Roaming Agreements** and highlight the value that **blockchain** technology brings to enable digitization and digitalization of these processes.
 
 ### Overview of Roaming and Roaming Agreement
 The roaming procedure maintains the persistent connectivity of the subscribers across different networks and geographical regions. Roaming refers to the capability for a subscriber to access the mobile services offered by the Visited Public Mobile Network (VPMN) via the Home Public Mobile Network (HPMN), when moving out of the coverage range of HPMN [1]. The back office part of this seamless extension of coverage is enabled by the process of wholesale **Roaming Agreement**, which are technical, commercial, and legal documents that govern the relationship and billing and accounting between the user's home operator and the visited mobile operator network.
@@ -25,18 +25,18 @@ To standardize the legal commercial aspects of the **Roaming Agreement**, the GS
 
 To clarify the *standardization* presented by GSMA, the next Table summarizes the standard templates for **International Roaming Agreement**, as well as the *standard templates* commonly used. The order commonly followed when creating the **Roaming Agreement** is the one established in the Table, where it is common to start with a base framework (AA.12), from which it is added the set of common annexes (AA.13). From this point, individual annexes and addendums are included depending on the operating characteristics of the agreement. It should be noted that although 99% of mobile network operators (MNOs) manage their **Roaming Agreement** based on the above-mentioned template sequence, there is no limit to the number of documents to be included. The following is a brief description of each common standard template commonly used:
 
-|Standard Templates for International Roaming Agreement                              |Common use|
-|:----------------------------------------------------------------------------------:|:--------:|
-|AA.12: International Roaming Agreement (Base Legal Framework)	                     |X         |
-|AA.13: International Roaming Agreement- Common Annexes	                             |X         |
-|AA.14: Individual Annexes Roaming Agreement Exchange Operational Data	             |X         |
-|AA.14: Individual Annexes Roaming Agreement Exchange Inter-Operator Tariff	         |X         |
-|AA.19: Addendum to the International Roaming Agreement SMS Internetworking Agreement|X	        |
-|AA.40: Addendum to the International Roaming Agreement MMS Internetworking Agreement|	        |
-|AA.43: Addendum to the International Roaming Agreement WLAN Roaming Agreement       |          |
-|AA.60: Addendum to the International Roaming Agreement Internetworking Template     |          |
-|AA.70: Addendum to the International Roaming Agreement MMS Hubbing Agreement        |	        |
-|AA.71: Addendum to the International Roaming Agreement SMS Hubbing Agreement        |          |
+|                Standard Templates for International Roaming Agreement                | Common use |
+| :----------------------------------------------------------------------------------: | :--------: |
+|            AA.12: International Roaming Agreement (Base Legal Framework)             |     X      |
+|                AA.13: International Roaming Agreement- Common Annexes                |     X      |
+|        AA.14: Individual Annexes Roaming Agreement Exchange Operational Data         |     X      |
+|      AA.14: Individual Annexes Roaming Agreement Exchange Inter-Operator Tariff      |     X      |
+| AA.19: Addendum to the International Roaming Agreement SMS Internetworking Agreement |     X      |
+| AA.40: Addendum to the International Roaming Agreement MMS Internetworking Agreement |            |
+|    AA.43: Addendum to the International Roaming Agreement WLAN Roaming Agreement     |            |
+|   AA.60: Addendum to the International Roaming Agreement Internetworking Template    |            |
+|     AA.70: Addendum to the International Roaming Agreement MMS Hubbing Agreement     |            |
+|     AA.71: Addendum to the International Roaming Agreement SMS Hubbing Agreement     |            |
 
 **Table 1**: GSMA standard templates commonly used in Roaming Agreements.
 
