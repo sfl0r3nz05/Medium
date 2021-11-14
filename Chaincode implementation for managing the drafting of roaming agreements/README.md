@@ -72,45 +72,47 @@ Having explained the main implementation aspects, and to offer an easy guide for
     ```
     sha256sum go1.16.7.linux-amd64.tar.gz`
     ```
-3. Copy Golang bynary into executable folder: 
+3. Copy Golang binary into executable folder: 
     ```
     sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.16.7.linux-amd64.tar.gz`
     ```
 4. Define the GOPATH environmental variable:
     ```
     export GOPATH=$HOME/go
+    ```
+5. Include GOPATH into the PATH:
+    ```
     export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
     ```
-5. Edit the profile file: Edit the `profile` file
+6. Edit the profile file: Edit the `profile` file
     ```
     sudo nano $HOME/.profile
     ```
-6. Add next line into `profile` file
+7. Add next line into `profile` file
     ```
     export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
     ```
-8. Enabling changes in the `profile` file
+9. Enabling changes in the `profile` file
     ```
     source ~/.profile
     ```
-9. Verify Golang version
+10. Verify Golang version
     ```
     go version
     ```
-10. By default the workspace directory is set to $HOME/go
+11. By default, the workspace directory is set to $HOME/go
     ```
     mkdir ~/go
     ```
-11. Inside the workspace create a new directory
+12. Inside the workspace create a new directory
     ```
     mkdir -p $GOPATH/src/github.com/nlp-dlt/network/chaincode/testcc
     ```
-    ```
-12. Enable go mod
+13. Enable go mod
     ```
     go mod init $GOPATH/src/github.com/nlp-dlt/network/chaincode/testcc
     ```
-13. Install dependencies
+14. Install dependencies
     ```
     go get github.com/google/uuid
     go get github.com/sirupsen/logrus
@@ -118,17 +120,17 @@ Having explained the main implementation aspects, and to offer an easy guide for
     go get github.com/hyperledger/fabric-chaincode-go/shim
     go get github.com/hyperledger/fabric-chaincode-go/pkg/cid
     ```
-14. Build the changes
+15. Build the changes
     ```
     go build
     ```
-15. Building a vendor is necessary to import all the external dependencies needed for the basic functionality of the chaincode into a local vendor directory
+16. Building a vendor is necessary to import all the external dependencies needed for the basic functionality of the chaincode into a local vendor directory
     If the chaincode does not run because of the vendor, it can be built from scratch:
     ```
     cd   $GOPATH/src/github.com/nlp-dlt/network/chaincode/testcc
     dep  init
     ```
-16. Also if it already exists, the missing packages can be imported using the update option:
+17. Also if it already exists, the missing packages can be imported using the update option:
     ```
     cd   $GOPATH/src/github.com/nlp-dlt/network/chaincode/testcc
     dep  ensure -v
