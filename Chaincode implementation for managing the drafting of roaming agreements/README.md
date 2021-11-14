@@ -84,35 +84,35 @@ Having explained the main implementation aspects, and to offer an easy guide for
     ```
     export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
     ```
-6. Edit the profile file: Edit the `profile` file
+6. Edit the profile file: Edit the `profile` file:
     ```
     sudo nano $HOME/.profile
     ```
-7. Add next line into `profile` file
+7. Add next line into `profile` file:
     ```
     export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
     ```
-9. Enabling changes in the `profile` file
+9. Enabling changes in the `profile` file:
     ```
     source ~/.profile
     ```
-10. Verify Golang version
+10. Verify Golang version:
     ```
     go version
     ```
-11. By default, the workspace directory is set to $HOME/go
+11. By default, the workspace directory is set to $HOME/go:
     ```
     mkdir ~/go
     ```
-12. Inside the workspace create a new directory
+12. Inside the workspace create a new directory, e.g.:
     ```
     mkdir -p $GOPATH/src/github.com/nlp-dlt/network/chaincode/testcc
     ```
-13. Enable go mod
+13. Enable go mod e.g.:
     ```
     go mod init $GOPATH/src/github.com/nlp-dlt/network/chaincode/testcc
     ```
-14. Install dependencies
+14. Install chaincode dependencies:
     ```
     go get github.com/google/uuid
     go get github.com/sirupsen/logrus
@@ -137,14 +137,14 @@ Having explained the main implementation aspects, and to offer an easy guide for
     ```
     
 ## Challenges encountered during Implementation: 
-Finally, in this topic we consider ceratins points of interest throughout the chaincode implementation process that represented challenges to us as designers and developers:
+Finally, in this topic we consider certains points of interest throughout the chaincode implementation process that represented challenges to us as designers and developers:
 
-1. Working with pointers on nested structures: Our chaincode defines numerous nested structures, which must be initialized and updated constantly throughout the chaincode's life cycle. To avoid receiving a copy of a value receiver that does not update the structure, a pointer to the memory that contains the structure must be used. For a better understanding of how to work with nested structures using pointers we have included the following [example](https://play.golang.org/p/UoeBH_2EZdb) on a golang test runtime.
-2. Generating unique identifiers: The chaincode lifecycle contains two main unique identifiers: Roaming Agreement Idenfier (RAID) and Articles Identifier (articlesID). To ensure that the identifiers are unique and avoid collisions, the resource used has been to generate a uuid and then compute the *SHA-256* from it, which will constitute the identifier. The functionalities used for this purpose are implemented within the Util Module.
+1. Working with pointers on nested structures: Our chaincode defines numerous nested structures, which must be initialized and updated constantly throughout the chaincode's life cycle. To avoid receiving a copy of a value receiver that does not update the structure, a pointer to the memory that contains the structure must be used. For a better understanding of how to work with nested structures using pointers, we have included the following [example](https://play.golang.org/p/UoeBH_2EZdb) on a Golang test runtime.
+2. Generating unique identifiers: The chaincode lifecycle contains two main unique identifiers: Roaming Agreement Identifier (RAID) and Articles Identifier (articlesID). To ensure that the identifiers are unique and avoid collisions, the resource used has been to generate a UUID and then compute the *SHA-256* from it, which will constitute the identifier. The functionalities used for this purpose are implemented within the Util Module.
 
 ## Interest links:
 - The designs can be modified using the [App Diagrams Tool](https://app.diagrams.net/). 
-- Drawio files can be found at:
+- **Drawio files** can be found at:
     - [Chaincode Sequence Diagram](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/diagram_sequence_chaincode_v17.drawio)
     - [Chaincode Class Diagram](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/class_diagram_chaincode_v17.drawio)
     - [Status Diagram for Roaming Agreement Negotiation](https://github.com/sfl0r3nz05/nlp-dlt/blob/sentencelvl/chaincode/design/Roaming_Agreement_State_v03.drawio)
